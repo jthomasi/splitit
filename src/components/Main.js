@@ -1,31 +1,17 @@
 import React, {Component} from "react";
 
 class Main extends Component {
-    constructor(){
-        super();
-        this.state = {
-
-        };
-        //binds
-    }
-    
-    // componentDidMount(){
-
-    // }
-
-    // componentDidUpdate(){
-
-    // }
-
     render() {
         return (
-        <div className="container">
+        <div>
+            <div className="btn-group">
+                <button className="btn btn-default btn-lg">Create Home</button>
+            </div>
             
-            <div className="jumbotron">Test</div>
-
-            <Registration />
-
-        </div>        
+            <div className="btn-group">
+                <button className="btn btn-default btn-lg">Sign-in Home</button>
+            </div>
+        </div>      
         );
     }
 }

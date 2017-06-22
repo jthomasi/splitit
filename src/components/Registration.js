@@ -6,14 +6,16 @@ class Registration extends Component {
         this.state = {
             
         };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event){
-        
+        event.preventDefault();
     }
 
     handleSubmit(event){
-
+        event.preventDefault();
     }
 
 	render(){
@@ -30,7 +32,7 @@ class Registration extends Component {
                             <div className="form-group">
                                 <label className="col-sm-4 control-label">Home Name</label>
                                 <div className="col-sm-8">
-                                    <input className="form-control"/>
+                                    <input type="text" className="form-control"/>
                                 </div>
                             </div>
                             {/*home email*/}

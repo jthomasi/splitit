@@ -5,7 +5,7 @@ import './App.css';
 import Main from "./components/Main";
 // import Bills from "./components/Bills";
 // import Roommates from "./components/Roommates";
-// import Registration from "./components/Registration";
+import Registration from "./components/Registration";
 
 //react router to link other pages and components
 import {
@@ -50,6 +50,7 @@ class App extends Component {
 
           <p className="App-intro">
             <Main />
+            <Registration/>
           </p>
         </div>
       );

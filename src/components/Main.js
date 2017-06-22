@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Registration from "./Registration";
 
 class Main extends Component {
     constructor(){

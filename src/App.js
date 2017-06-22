@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+
 //components
 import Main from "./components/Main";
-// import Bills from "./components/Bills";
-// import Roommates from "./components/Roommates";
-import Registration from "./components/Registration";
+import Dashboard from "./components/Dashboard";
+
+import Registration from "./components/Registration";//TEST
+import Bills from "./components/Bills"; //TEST
+import Roommates from "./components/Roommates"; //TEST
+import AddBill from "./components/AddBill";//TEST
+import AddRM from "./components/AddRM";//TEST
 
 //react router to link other pages and components
 import {
@@ -41,18 +46,26 @@ class App extends Component {
   
     render() {
       return (
-        <div className="App container">
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Splitit</h2>
-            <p>Splitting the rent and bills made easy(ier).</p>
-          </div>
+        <Router>
+          <div className="App container">
+            <div className="App-header">
+              <img src={logo} className="App-logo" alt="logo" />
+              <h2>Splitit</h2>
+              <p>Splitting the rent and bills made easy(ier).</p>
+            </div>
 
-          <p className="App-intro">
-            <Main />
-            <Registration/>
-          </p>
-        </div>
+            <p className="App-intro">
+              {/*test area*/}
+              <Main />
+              <Registration/>
+              <Bills/>
+              <Roommates/>
+              <Dashboard/>
+              <AddBill/>
+              <AddRM/>
+            </p>
+          </div>
+        </Router>
       );
     }
 }

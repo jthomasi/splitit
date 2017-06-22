@@ -18,16 +18,46 @@ class Registration extends Component {
 
 	render(){
         return(
-            <div className="panel panel-default">
-                <div className="panel-heading">
-                    <div className="panel-title">Registration</div>
+            <div>
+                <div className="col-md-4"></div>
+                <div className="panel panel-default col-md-4">
+                    <div className="panel-heading">
+                        <div className="panel-title">Registration</div>
+                    </div>
+                    <div className="panel-body">             
+                        <form className="form-horizontal">
+                            {/*home name*/}
+                            <div className="form-group">
+                                <label className="col-sm-4 control-label">Home Name</label>
+                                <div className="col-sm-8">
+                                    <input className="form-control"/>
+                                </div>
+                            </div>
+                            {/*home email*/}
+                            <div className="form-group">
+                                <label className="col-sm-4 control-label">Email</label>
+                                <div className="col-sm-8">
+                                    <input type="email" className="form-control"/>
+                                </div>
+                            </div>
+                            {/*home password*/}
+                            <div className="form-group">
+                                <label className="col-sm-4 control-label">Password</label>
+                                <div className="col-sm-8">
+                                    <input type="password" className="form-control"/>
+                                </div>
+                            </div>
+                            {/*password confirm*/}
+                            <div className="form-group">
+                                <label className="col-sm-4 control-label">Confirm Password</label>
+                                <div className="col-sm-8">
+                                    <input type="password" className="form-control"/>
+                                </div>
+                            </div>
+                        </form>                    
+                    </div>
                 </div>
-                <div className="panel-body">
-                    {/*home name*/}
-                    {/*home email*/}
-                    {/*home password*/}
-                    {/*password confirm*/}
-                </div>
+                <div className="col-md-4"></div>
             </div>
         );
     }

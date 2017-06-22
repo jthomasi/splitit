@@ -10,6 +10,7 @@ var RoommateSchema = new Schema({
       },
       percentage: {
         type: Number,
+        default: 0
       }
 });
 

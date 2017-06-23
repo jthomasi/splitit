@@ -45,9 +45,8 @@ class App extends Component {
     render() {
       return (
         <Router>
-          <div className="App container">
-            <div className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
+          <div className="container">
+            <div className="jumbotron">
               <h2>Splitit</h2>
               <p>Splitting the rent and bills made easy(ier).</p>
             </div>
@@ -55,9 +54,7 @@ class App extends Component {
             <p className="App-intro">
               {/*test area*/}
               <Main />
-              <Registration/>
-              <Bills/>
-              <Roommates/>
+              {/*<Registration/>*/}
               <Dashboard/>
               <AddBill/>
               <AddRM/>

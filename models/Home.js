@@ -15,32 +15,12 @@ var HomeSchema = new Schema({
       type: String
     },
     roommates: [{
-      rmname: {
-        type: String,
-        default: ""
-      },
-      rmemail: {
-        type: String,
-        default: ""
-      },
-      percentage: {
-        type: Number,
-        default: 0
-      }
+      type: Schema.Types.ObjectId,
+      ref: "Roommate"
     }],
     bills: [{
-      billname: {
-        type: String,
-        default: ""
-      },
-      cost: {
-        type: Number,
-        default: 0
-      },
-      due: {
-        type: Date,
-        default: ""
-      }
+      type: Schema.Types.ObjectId,
+      ref: "Bill"
     }]
 });
 

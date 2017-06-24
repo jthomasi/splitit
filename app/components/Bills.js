@@ -3,7 +3,7 @@ import {Route, Link} from "react-router-dom";
 
 import AddBill from "./AddBill";
 
-import {routes, Subroutes} from "../config/routes";
+// import {routes, Subroutes} from "../config/routes";
 
 class Bills extends Component {
     //add case for no bills when props[] == 0
@@ -27,7 +27,7 @@ class Bills extends Component {
                         <ul>{this.listBills(["test","array"])}</ul>
                         <div className="btn-group">
                            <Link to="/addbill">
-                            <div className="btn btn-default btn-lg">Add bill</div>
+                            <button className="btn btn-default btn-lg">Add bill</button>
                            </Link>
                         </div>
                     </div>

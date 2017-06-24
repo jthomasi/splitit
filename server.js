@@ -77,7 +77,7 @@ app.post("/addroommate", function(req, res) {
     });
 });
 
-// adding a roommate to a home
+// adding a bill to a home
 app.post("/addbill", function(req, res) {
     var newBill = new Bill(req.body);
     newBill.save(function(error, doc) { 

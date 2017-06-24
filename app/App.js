@@ -9,6 +9,7 @@ import Bills from "./components/Bills"; //TEST
 import Roommates from "./components/Roommates"; //TEST
 import AddBill from "./components/AddBill";//TEST
 import AddRM from "./components/AddRM";//TEST
+import Login from "./components/Login"; //test
 
 //react router to link other pages and components
 import {
@@ -54,6 +55,7 @@ class App extends Component {
             <p className="App-intro">
               {/*test area*/}
               <Main />
+              {/*<Login/>*/}
             </p>
           </div>
         </Router>

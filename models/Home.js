@@ -2,9 +2,6 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var HomeSchema = new Schema({
-	  _id: {
-    	type: String
-    },
     homename: {
     	type: String
     },

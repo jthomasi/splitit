@@ -99,17 +99,38 @@ app.post("/addbill", function(req, res) {
 
 // route for dashboard information based off the login information
 app.get("/dashboard", function(req, res) {
-  // Find all notes in the note collection with our Note model
-  Home.findOne({ "_id": req.id  }, function(error, doc) {
-    // Send any errors to the browser
-    if (error) {
-      res.send(error);
-    }
-    // Or send the doc to the browser
-    else {
-      res.send(doc);
-    }
-  });
+	Home.findOne({ "_id": req._id  }, function(error, doc) {
+	    if (error) {
+	        res.send(error);
+	    }
+	    else {
+	        res.send(doc);
+	    }
+	});
+});
+
+// deleting a rommmate from the home, NEEDS TESTING
+app.delete("/deleteroommate", function(req, res) {
+	Home.findOneAndUpdate({}, { $delete: { "roommates": req._id } }, function(err, newdoc) {
+		if (err) {
+				res.send(err);
+			}
+		else {
+				res.send(newdoc);
+		}
+	});
+});
+
+// deleting a bill from the home, NEEDS TESTING
+app.delete("/deletebill", function(req, res) {
+	Home.findOneAndUpdate({}, { $delete: { "bills": req._id } }, function(err, newdoc) {
+		if (err) {
+				res.send(err);
+			}
+		else {
+				res.send(newdoc);
+		}
+	});
 });
 
 // -------------------------------------------------

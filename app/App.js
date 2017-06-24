@@ -54,10 +54,6 @@ class App extends Component {
             <p className="App-intro">
               {/*test area*/}
               <Main />
-              {/*<Registration/>*/}
-              <Dashboard/>
-              <AddBill/>
-              <AddRM/>
             </p>
           </div>
         </Router>

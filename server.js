@@ -5,6 +5,9 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 
 // schemas
+var Home = require("./models/Home.js");
+var Roommate = require("./models/Roommate.js");
+var Bill = require("./models/Bill.js");
 
 // Create Instance of Express
 var app = express();
@@ -41,6 +44,73 @@ app.get("/", function(req, res) {
   res.sendFile(__dirname + "/public/index.html");
 });
 
+// creating a home account
+app.post("/addhome", function(req, res) {
+	var newHome = new Home(req.body);
+	newHome.save(function(error, doc) {
+	    if (error) {
+	        console.log(error);
+	    }
+	    else {
+	        console.log(doc);
+	    }
+	});
+});
+
+// adding a roommate to a home
+app.post("/addroommate", function(req, res) {
+    var newRoommate = new Roommate(req.body);
+    newRoommate.save(function(error, doc) { 
+    	if (error) {
+     	    res.send(error);
+    	}
+    	else {
+      		Home.findOneAndUpdate({}, { $push: { "roommates": doc._id } }, { new: true }, function(err, newdoc) {
+        		if (err) {
+          			res.send(err);
+       			}
+        		else {
+          			res.send(newdoc);
+        		}
+      		});
+    	}
+    });
+});
+
+// adding a roommate to a home
+app.post("/addbill", function(req, res) {
+    var newBill = new Bill(req.body);
+    newBill.save(function(error, doc) { 
+    	if (error) {
+     	    res.send(error);
+    	}
+    	else {
+      		Home.findOneAndUpdate({}, { $push: { "bills": doc._id } }, { new: true }, function(err, newdoc) {
+        		if (err) {
+          			res.send(err);
+       			}
+        		else {
+          			res.send(newdoc);
+        		}
+      		});
+    	}
+    });
+});
+
+// route for dashboard information based off the login information
+app.get("/dashboard", function(req, res) {
+  // Find all notes in the note collection with our Note model
+  Home.findOne({ "_id": req.id  }, function(error, doc) {
+    // Send any errors to the browser
+    if (error) {
+      res.send(error);
+    }
+    // Or send the doc to the browser
+    else {
+      res.send(doc);
+    }
+  });
+});
 
 // -------------------------------------------------
 

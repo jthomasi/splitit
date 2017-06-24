@@ -56,6 +56,10 @@ class Registration extends Component {
                                     <input type="password" className="form-control"/>
                                 </div>
                             </div>
+                            {/*submit*/}
+                            <div className="btn-group">
+                                    <button className="btn btn-default btn-lg">Submit</button>
+                             </div>
                         </form>                    
                     </div>
                 </div>

@@ -37,7 +37,7 @@ class AddRM extends Component{
                             <div className="panel-title">Add Roommate</div>
                         </div>
                         <div className="panel-body">
-                            <form className="form-horizontal">
+                            <form className="form-horizontal" method="post" action="/addroommate">
                                 {/*name*/}
                                 <div className="form-group">
                                     <label className="col-sm-4 control-label">Name</label>
@@ -71,10 +71,10 @@ class AddRM extends Component{
                                         className="form-control"/>
                                     </div>
                                 </div>
-                            </form>
-                            <div className="btn-group">
-                                <div className="btn btn-default btn-lg">Add</div>
-                            </div>
+                                <div className="btn-group">
+                                    <button className="btn btn-default btn-lg">Add</button>
+                                </div>
+                            </form>                            
                         </div>
                     </div>
                 </div>

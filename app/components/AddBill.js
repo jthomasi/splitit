@@ -37,7 +37,7 @@ class AddBills extends Component{
                             <div className="panel-title">Add Bill</div>
                         </div>
                         <div className="panel-body">
-                            <form className="form-horizontal">
+                            <form className="form-horizontal" method="post" action="addbill">
                                 {/*bill name*/}
                                 <div className="form-group">
                                     <label className="col-sm-4 control-label">Bill Name</label>

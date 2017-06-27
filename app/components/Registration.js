@@ -30,7 +30,7 @@ class Registration extends Component {
                         <div className="panel-title">Registration</div>
                     </div>
                     <div className="panel-body">             
-                        <form className="form-horizontal">
+                        <form className="form-horizontal" action="/addhome" method="post">
                             {/*home name*/}
                             <div className="form-group">
                                 <label className="col-sm-4 control-label">Home Name</label>

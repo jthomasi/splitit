@@ -5,8 +5,7 @@ class AddBills extends Component{
     render(){
         return(
             <div>
-                <div className="col-md-4">{/*blank*/}</div>
-                <div className="col-md-4">
+                <div className="col-md-12">
                     <div className="panel panel-default">
                         <div className="panel-heading">
                             <div className="panel-title">Add Bill</div>
@@ -41,7 +40,6 @@ class AddBills extends Component{
                         </div>
                     </div>
                 </div>
-                <div className="col-md-4">{/*blank*/}</div>
             </div>
         );
     }

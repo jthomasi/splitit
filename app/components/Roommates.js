@@ -34,7 +34,7 @@ class Roommates extends Component {
         console.log("showAddRM");
         if (this.state.isVisible) {
             return(
-                <addRM isVisible={this.state.isVisible}/>
+                <AddRM isVisible={this.state.isVisible}/>
             );
         } else {
             console.log("no render");
@@ -52,7 +52,7 @@ class Roommates extends Component {
                     <div className="panel-body">
                         <ul>{this.listRoomies(["test","array"])}</ul>
                         <div className="btn-group">
-                             <button onClick={this.addRM} className="btn btn-default btn-lg">Add roommate</button>
+                             <button onClick={this.addRoomies} className="btn btn-default btn-lg">Add roommate</button>
                         </div>
                     </div>
                 </div>

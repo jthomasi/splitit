@@ -1,22 +1,25 @@
 import React, {Component} from "react";
 
 class Registration extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
+    // constructor(props){
+    //     super(props);
+    //     this.state = {
             
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+    //     };
+    //     this.handleChange = this.handleChange.bind(this);
+    //     this.handleSubmit = this.handleSubmit.bind(this);
+    // }
 
-    handleChange(event){
-        event.preventDefault();
-    }
+    // handleChange(event){
+    //     event.preventDefault();
+    // }
 
-    handleSubmit(event){
-        event.preventDefault();
-    }
+    // handleSubmit(event){
+    //     event.preventDefault();
+    // }
+
+    //check if name and email exists; else throw error
+    //check if password matches with each other; else throw error
 
 	render(){
         return(

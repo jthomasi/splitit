@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 
 class Login extends Component {
+    //check to see if name and password match; flag if it doesn't
     render(){
         return(
             <div>

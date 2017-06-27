@@ -1,19 +1,45 @@
 import React, {Component} from "react";
-import {Route, Link} from "react-router-dom";
 
 import AddRM from "./AddRM";
 
-import {routes, Subroutes} from "../config/routes";
-
 class Roommates extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+          isVisible: false  
+        };
+        this.addRoomies = this.addRoomies.bind(this);
+        this.listRoomies = this.listRoomies.bind(this);
+        this.showAddRM = this.showAddRM.bind(this);
+    }
     //add case for no roommates when props[] == 0
     // show %share of bill
+
+    //conditionally render add scene after clicking on add roommate
+    //clicking button will show add roommate /cancel
+    //add roommate fields may be retained; to solve
     listRoomies(props){        
         props.map((i)=>{
             return(
                 <li>i</li>
             );
         });
+    }
+
+    addRoomies() {
+        this.setState({isVisible: !this.state.isVisible});
+    }
+
+    showAddRM() {
+        console.log("showAddRM");
+        if (this.state.isVisible) {
+            return(
+                <addRM isVisible={this.state.isVisible}/>
+            );
+        } else {
+            console.log("no render");
+            return null;
+        }
     }
 
 	render(){
@@ -26,13 +52,12 @@ class Roommates extends Component {
                     <div className="panel-body">
                         <ul>{this.listRoomies(["test","array"])}</ul>
                         <div className="btn-group">
-                            <Link to="/addrm">
-                             <div className="btn btn-default btn-lg">Add roommate</div>
-                            </Link>
+                             <button onClick={this.addRM} className="btn btn-default btn-lg">Add roommate</button>
                         </div>
                     </div>
                 </div>
-                <Route path="/addrm" component={AddRM}/>
+                {/*conditionally render add*/}
+                {this.showAddRM()}
             </div>
         );
     }

@@ -1,9 +1,6 @@
 import React, {Component} from "react";
-import {Route, Link} from "react-router-dom";
 
 import AddBill from "./AddBill";
-
-// import {routes, Subroutes} from "../config/routes";
 
 class Bills extends Component {
     constructor(props){
@@ -13,7 +10,7 @@ class Bills extends Component {
         };
         this.addBill = this.addBill.bind(this);
         this.listBills = this.listBills.bind(this);
-        this.showAdd = this.showAdd.bind(this);
+        this.showBillAdd = this.showBillAdd.bind(this);
     }
     //add case for no bills when props[] == 0
     //display bill name, bill cost, and bill total
@@ -33,11 +30,11 @@ class Bills extends Component {
         this.setState({isVisible: !this.state.isVisible});
     }
 
-    showAdd() {
-        console.log("showAdd");
+    showBillAdd() {
+        console.log("showBillAdd");
         if (this.state.isVisible) {
             return(
-                <AddBill/>
+                <AddBill isVisible={this.state.isVisible}/>
             );
         } else {
             console.log("no render");
@@ -60,7 +57,7 @@ class Bills extends Component {
                     </div>
                 </div>
                 {/*conditionally render add*/}
-                {this.showAdd()}
+                {this.showBillAdd()}
             </div>
         );
     }

@@ -14,7 +14,7 @@ class Roommates extends Component {
     }
     //add case for no roommates when props[] == 0
     // show %share of bill
-
+    
     //conditionally render add scene after clicking on add roommate
     //clicking button will show add roommate /cancel
     //add roommate fields may be retained; to solve
@@ -34,7 +34,7 @@ class Roommates extends Component {
         console.log("showAddRM");
         if (this.state.isVisible) {
             return(
-                <AddRM isVisible={this.state.isVisible}/>
+                <AddRM/>
             );
         } else {
             console.log("no render");
@@ -52,7 +52,9 @@ class Roommates extends Component {
                     <div className="panel-body">
                         <ul>{this.listRoomies(["test","array"])}</ul>
                         <div className="btn-group">
-                             <button onClick={this.addRoomies} className="btn btn-default btn-lg">Add roommate</button>
+                            <button onClick={this.addRoomies} className="btn btn-default btn-lg">
+                                {this.state.isVisible ? "Close" : "Add roommate"}
+                            </button>
                         </div>
                     </div>
                 </div>

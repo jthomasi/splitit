@@ -34,7 +34,7 @@ class Bills extends Component {
         console.log("showBillAdd");
         if (this.state.isVisible) {
             return(
-                <AddBill isVisible={this.state.isVisible}/>
+                <AddBill/>
             );
         } else {
             console.log("no render");
@@ -52,7 +52,9 @@ class Bills extends Component {
                     <div className="panel-body">
                         <ul>{this.listBills(["test","array"])}</ul>
                         <div className="btn-group">
-                            <button onClick={this.addBill} className="btn btn-default btn-lg">Add bill</button>
+                            <button onClick={this.addBill} className="btn btn-default btn-lg">
+                                {this.state.isVisible ? "Close" : "Add bill"}
+                            </button>
                         </div>
                     </div>
                 </div>

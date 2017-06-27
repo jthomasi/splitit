@@ -7,6 +7,7 @@ import Dashboard from "./Dashboard";
 // import {routes, Subroutes} from "../config/routes";
 
 class Main extends Component {
+    //handle logins and registration
     render() {
         return (
         <div>

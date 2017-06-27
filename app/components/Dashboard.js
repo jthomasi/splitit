@@ -16,3 +16,14 @@ const Dashboard = () => {
 }
 
 export default Dashboard;
+
+// renderContent(){
+//     return AddBill ? this.state.addBill : AddRm
+// }
+// render()
+// <div>
+//     {this.renderContent()}
+// </div>
+// handleButtonClick() {
+//     this.setState({addBill: true})
+// }

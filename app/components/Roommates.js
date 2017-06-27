@@ -8,6 +8,10 @@ import {routes, Subroutes} from "../config/routes";
 class Roommates extends Component {
     //add case for no roommates when props[] == 0
     // show %share of bill
+
+    //conditionally render add scene after clicking on add roommate
+    //clicking button will show add roommate /cancel
+    //add roommate fields may be retained; to solve
     listRoomies(props){        
         props.map((i)=>{
             return(

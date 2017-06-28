@@ -100,7 +100,7 @@ app.post("/addbill", function(req, res) {
 // route for dashboard information based off the login information
 app.get("/dashboard", function(req, res) {
 	// needs a unique _id from the home account
-	Home.find({ "_id": req._id })
+	Home.find({ "_id": req.body._id })
 	    .populate(["bills", "roommates"])
 	    .exec(function(error, doc) {
 	        if (error) {
@@ -112,28 +112,40 @@ app.get("/dashboard", function(req, res) {
 	});
 });
 
-// deleting a rommmate from the home, NEEDS TESTING
-app.delete("/deleteroommate", function(req, res) {
-	Home.findOneAndUpdate({}, { $delete: { "roommates": req._id } }, function(err, newdoc) {
-		if (err) {
-				res.send(err);
-			}
-		else {
-				res.send(newdoc);
-		}
-	});
+// deleting a home by unique home _id value
+app.get("/deletehome", function(req, res) {
+    Home.findByIdAndRemove({ "_id": req.body._id }, function(err, newdoc) {
+        if (err) {
+            res.send(err);
+          }
+        else {
+            res.send(newdoc);
+        }
+    });
 });
 
-// deleting a bill from the home, NEEDS TESTING
-app.delete("/deletebill", function(req, res) {
-	Home.findOneAndUpdate({}, { $delete: { "bills": req._id } }, function(err, newdoc) {
-		if (err) {
-				res.send(err);
-			}
-		else {
-				res.send(newdoc);
-		}
-	});
+// deleting a rommmate from the home
+app.get("/deleteroommate", function(req, res) {
+    Roommate.findByIdAndRemove({ "_id": req.body._id }, function(err, newdoc) {
+        if (err) {
+            res.send(err);
+          }
+        else {
+            res.send(newdoc);
+        }
+    });
+});
+
+// deleting a bill from the home
+app.get("/deletebill", function(req, res) {
+    Bill.findByIdAndRemove({ "_id": req.body._id }, function(err, newdoc) {
+        if (err) {
+            res.send(err);
+          }
+        else {
+            res.send(newdoc);
+        }
+    });
 });
 
 // -------------------------------------------------

@@ -39,7 +39,7 @@ app.use(express.static("./public"));
 
 // --------------------- HTML ROUTES -----------------------
 
-app.get("/", function(req, res) {
+app.use("/", function(req, res) {
   console.log("main page");
   res.sendFile(__dirname + "/public/index.html");
 });

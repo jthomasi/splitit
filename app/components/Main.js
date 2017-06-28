@@ -4,7 +4,10 @@ import {Route, Link} from "react-router-dom";
 import Registration from "./Registration";
 import Dashboard from "./Dashboard";
 
+// import {routes, Subroutes} from "../config/routes";
+
 class Main extends Component {
+    //handle logins and registration
     render() {
         return (
         <div>

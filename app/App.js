@@ -9,6 +9,7 @@ import Bills from "./components/Bills"; //TEST
 import Roommates from "./components/Roommates"; //TEST
 import AddBill from "./components/AddBill";//TEST
 import AddRM from "./components/AddRM";//TEST
+import Login from "./components/Login"; //test
 
 //react router to link other pages and components
 import {
@@ -21,27 +22,7 @@ import {
 //use modal gallery for multiple pages
 //route config? in this file
 
-class App extends Component {
-    constructor(){
-      super();
-      this.state = {
-        homeName: "",
-        homeEmail: "",
-        homePW: "",
-        rmName: "",
-        rmEmail: "",
-        billPercent: 0,
-        billCost: 0,
-        billName: "",
-        dueDate: ""
-      };
-      //binds
-    }
-
-    // handleChange(event) {
-      
-    // }
-  
+class App extends Component {  
     render() {
       return (
         <Router>
@@ -54,10 +35,7 @@ class App extends Component {
             <p className="App-intro">
               {/*test area*/}
               <Main />
-              {/*<Registration/>*/}
-              <Dashboard/>
-              <AddBill/>
-              <AddRM/>
+              {/*<Login/>*/}
             </p>
           </div>
         </Router>

@@ -6,7 +6,8 @@ var HomeSchema = new Schema({
     	type: String
     },
     homeemail: {
-      type: String
+      type: String,
+      unique: true
     },
     password: {
       type: String

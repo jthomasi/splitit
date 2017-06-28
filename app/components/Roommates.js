@@ -18,7 +18,8 @@ class Roommates extends Component {
     //conditionally render add scene after clicking on add roommate
     //clicking button will show add roommate /cancel
     //add roommate fields may be retained; to solve
-    listRoomies(props){        
+    listRoomies(props){
+        //show minus sign next to each name with delete db method        
         props.map((i)=>{
             return(
                 <li>i</li>

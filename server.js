@@ -99,13 +99,16 @@ app.post("/addbill", function(req, res) {
 
 // route for dashboard information based off the login information
 app.get("/dashboard", function(req, res) {
-	Home.findOne({ "_id": req._id  }, function(error, doc) {
-	    if (error) {
-	        res.send(error);
-	    }
-	    else {
-	        res.send(doc);
-	    }
+	// needs a unique _id from the home account
+	Home.find({ "_id": req._id })
+	    .populate(["bills", "roommates"])
+	    .exec(function(error, doc) {
+	        if (error) {
+	        	res.send(error);
+	        }
+	        else {
+	        	res.send(doc);
+	        }
 	});
 });
 

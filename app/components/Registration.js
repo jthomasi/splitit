@@ -1,23 +1,30 @@
 import React, {Component} from "react";
 
 class Registration extends Component {
-    // constructor(props){
-    //     super(props);
-    //     this.state = {
-            
-    //     };
-    //     this.handleChange = this.handleChange.bind(this);
-    //     this.handleSubmit = this.handleSubmit.bind(this);
-    // }
+    constructor(props){
+        super(props);
+        this.state = {
+            homeName: "",
+            homeEmail: "",
+            password: "",
+            passwordConfirm: ""
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
 
-    // handleChange(event){
-    //     event.preventDefault();
-    // }
+    handleSubmit(event){
+        event.preventDefault();
+        console.log("registration submitted");
+    }
 
-    // handleSubmit(event){
-    //     event.preventDefault();
-    // }
+    handleChange(event){
+        console.log("registration info changed");
 
+        let newState = {};
+        newState[event.target.id] = event.target.value;
+        this.setState(newState); 
+    }
     //check if name and email exists; else throw error
     //check if password matches with each other; else throw error
 
@@ -35,28 +42,44 @@ class Registration extends Component {
                             <div className="form-group">
                                 <label className="col-sm-4 control-label">Home Name</label>
                                 <div className="col-sm-8">
-                                    <input type="text" className="form-control"/>
+                                    <input type="text"
+                                    value={this.state.homeName}
+                                    onChange={this.handleChange}
+                                    id="homeName"
+                                    className="form-control"/>
                                 </div>
                             </div>
                             {/*home email*/}
                             <div className="form-group">
                                 <label className="col-sm-4 control-label">Email</label>
                                 <div className="col-sm-8">
-                                    <input type="email" className="form-control"/>
+                                    <input type="email"
+                                    value={this.state.homeEmail}
+                                    onChange={this.handleChange}
+                                    id="homeEmail"
+                                    className="form-control"/>
                                 </div>
                             </div>
                             {/*home password*/}
                             <div className="form-group">
                                 <label className="col-sm-4 control-label">Password</label>
                                 <div className="col-sm-8">
-                                    <input type="password" className="form-control"/>
+                                    <input type="password"
+                                    value={this.state.password}
+                                    onChange={this.handleChange}
+                                    id="password"
+                                    className="form-control"/>
                                 </div>
                             </div>
                             {/*password confirm*/}
                             <div className="form-group">
                                 <label className="col-sm-4 control-label">Confirm Password</label>
                                 <div className="col-sm-8">
-                                    <input type="password" className="form-control"/>
+                                    <input type="password"
+                                    value={this.state.passwordConfirm}
+                                    onChange={this.handleChange}
+                                    id="passwordConfirm"
+                                    className="form-control"/>
                                 </div>
                             </div>
                             {/*submit*/}

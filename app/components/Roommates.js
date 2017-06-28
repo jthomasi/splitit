@@ -20,9 +20,9 @@ class Roommates extends Component {
     //add roommate fields may be retained; to solve
     listRoomies(props){
         //show minus sign next to each name with delete db method        
-        props.map((i)=>{
+        return props.map((i)=>{
             return(
-                <li>i</li>
+                <li>{i}</li>
             );
         });
     }

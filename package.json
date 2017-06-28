@@ -5,6 +5,7 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "material-ui": "^0.18.4",
     "mongojs": "^2.4.0",
     "mongoose": "^4.10.7",
     "morgan": "^1.8.2",

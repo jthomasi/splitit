@@ -23,7 +23,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(express.static("./public"));
 
-// -------------------------------------------------
+// ----------------- MONGO_DB CONFIG -----------------------------
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Home_db");
@@ -37,12 +37,14 @@ app.use(express.static("./public"));
 //   console.log("Mongoose connection successful.");
 // });
 
-//MongoDB routes
-// -------------------------------------------------
+// --------------------- HTML ROUTES -----------------------
+
 app.get("/", function(req, res) {
   console.log("main page");
   res.sendFile(__dirname + "/public/index.html");
 });
+
+// --------------------- ADD ROUTES ------------------------
 
 // creating a home account
 app.post("/addhome", function(req, res) {
@@ -97,6 +99,8 @@ app.post("/addbill", function(req, res) {
     });
 });
 
+// ---------------------- DISPLAY ROUTES -------------------------
+
 // route for dashboard information based off the login information
 app.get("/dashboard", function(req, res) {
 	// needs a unique _id from the home account
@@ -107,13 +111,17 @@ app.get("/dashboard", function(req, res) {
 	        	res.send(error);
 	        }
 	        else {
+	        	// might need to be trimmed down to just roommates and bills array
 	        	res.send(doc);
 	        }
 	});
 });
 
+// --------------------- DELETE ROUTES ------------------------
+
 // deleting a home by unique home _id value
 app.get("/deletehome", function(req, res) {
+	// selecting a home using the unique home _id and removing the home from mongo_db
     Home.findByIdAndRemove({ "_id": req.body._id }, function(err, newdoc) {
         if (err) {
             res.send(err);
@@ -126,6 +134,7 @@ app.get("/deletehome", function(req, res) {
 
 // deleting a rommmate from the home
 app.get("/deleteroommate", function(req, res) {
+	// selecting a roommate using the unique roommate _id and removing from the related home in mongo_db
     Roommate.findByIdAndRemove({ "_id": req.body._id }, function(err, newdoc) {
         if (err) {
             res.send(err);
@@ -138,6 +147,7 @@ app.get("/deleteroommate", function(req, res) {
 
 // deleting a bill from the home
 app.get("/deletebill", function(req, res) {
+	// selecting a bill using the unique bill _id and removing from the related home in mongo_db
     Bill.findByIdAndRemove({ "_id": req.body._id }, function(err, newdoc) {
         if (err) {
             res.send(err);
@@ -148,7 +158,7 @@ app.get("/deletebill", function(req, res) {
     });
 });
 
-// -------------------------------------------------
+// ---------------- LISTENER -------------------
 
 // Listener
 app.listen(PORT, function() {

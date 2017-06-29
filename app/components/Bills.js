@@ -20,9 +20,9 @@ class Bills extends Component {
     //addbill fields may be retained; to solve
     listBills(props){
         //show minus sign next to each name with delete db method
-        props.map((i)=>{
+        return props.map((i)=>{
             return(
-                <li>i</li>
+                <li>{i}</li>
             );
         });
     }

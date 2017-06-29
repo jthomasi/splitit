@@ -71,10 +71,10 @@ class AddBills extends Component{
                                         className="form-control"/>
                                     </div>
                                 </div>
-                            </form>
-                            <div className="btn-group">
-                                <div className="btn btn-default btn-lg">Add</div>
-                            </div>
+                                <div className="btn-group">
+                                    <div className="btn btn-default btn-lg">Add</div>
+                                </div>
+                            </form>                            
                         </div>
                     </div>
                 </div>

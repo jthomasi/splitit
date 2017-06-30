@@ -1,6 +1,8 @@
 import React from 'react';
 import Auth from '../modules/Auth';
 import Dashboard from '../components/Dashboard.jsx';
+import Bills from "../components/Bills.js";
+import Roommates from "../components/Roommates.js";
 
 
 class DashboardPage extends React.Component {
@@ -40,7 +42,13 @@ class DashboardPage extends React.Component {
    * Render the component.
    */
   render() {
-    return (<Dashboard secretData={this.state.secretData} />);
+    return (
+    <div>
+      <Dashboard secretData={this.state.secretData} />
+      <Roommates/>
+      <Bills/>
+    </div>
+    );
   }
 
 }

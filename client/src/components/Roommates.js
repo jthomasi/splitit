@@ -1,4 +1,8 @@
 import React, {Component} from "react";
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {List, ListItem} from 'material-ui/List';
+import FlatButton from 'material-ui/FlatButton';
+import Divider from 'material-ui/Divider';
 
 import AddRM from "./AddRM";
 
@@ -22,12 +26,15 @@ class Roommates extends Component {
         //show minus sign next to each name with delete db method        
         return props.map((i)=>{
             return(
-                <li>{i}</li>
+                <ListItem
+                primaryText={i}
+                />
             );
         });
     }
 
     addRoomies() {
+        console.log("adding");
         this.setState({isVisible: !this.state.isVisible});
     }
 
@@ -45,23 +52,19 @@ class Roommates extends Component {
 
 	render(){
         return(
-            <div className="col-md-6">
-                <div className="panel panel-default">
-                    <div className="panel-heading">
-                        <div className="panel-title">Roommates</div>
+            <Card>
+                <CardTitle title="Roommmates" subtitle="manage roommates"/>
+                <List>
+                    {this.listRoomies(["test","array"])}
+                </List>
+                <Divider/>
+                <CardActions>
+                    <div onClick={this.addRoomies}>
+                        <FlatButton label={this.state.isVisible ? "Close" : "Add Roommate"}/>
                     </div>
-                    <div className="panel-body">
-                        <ul>{this.listRoomies(["test","array"])}</ul>
-                        <div className="btn-group">
-                            <button onClick={this.addRoomies} className="btn btn-default btn-lg">
-                                {this.state.isVisible ? "Close" : "Add roommate"}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                {/*conditionally render add*/}
+                </CardActions>
                 {this.showAddRM()}
-            </div>
+            </Card>
         );
     }
 

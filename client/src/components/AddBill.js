@@ -34,11 +34,11 @@ class AddBills extends Component{
     render(){
         return(
             <Card>
-                <CardTitle/>
+                <CardTitle title="Add Bill"/>
                     <form className="form-horizontal" method="post" action="addbill">
                         {/*bill name*/}
                         <div className="form-group">
-                            <label className="col-sm-4 control-label">Bill Name</label>
+                            <label className="col-sm-2 control-label">Bill Name</label>
                             <div className="col-sm-8">
                                 <input type="text"
                                 value={this.state.billName}
@@ -46,10 +46,11 @@ class AddBills extends Component{
                                 id="billName"
                                 className="form-control"/>
                             </div>
+                            <div className="col-sm-2"/>
                         </div>
                         {/*bill cost*/}
                         <div className="form-group">
-                            <label className="col-sm-4 control-label">Bill Cost</label>
+                            <label className="col-sm-2 control-label">Bill Cost</label>
                             <div className="col-sm-8">
                                 <input type="number"
                                 value={this.state.billCost}                                        
@@ -57,10 +58,11 @@ class AddBills extends Component{
                                 id="billCost"
                                 className="form-control"/>
                             </div>
+                            <div className="col-sm-2"/>
                         </div>
                         {/*due date*/}
                         <div className="form-group">
-                            <label className="col-sm-4 control-label">Due Date</label>
+                            <label className="col-sm-2 control-label">Due Date</label>
                             <div className="col-sm-8">
                                 <input type="text" 
                                 value={this.state.dueDate}                                        
@@ -68,9 +70,7 @@ class AddBills extends Component{
                                 id="dueDate"
                                 className="form-control"/>
                             </div>
-                        </div>
-                        <div className="btn-group">
-                            <div className="btn btn-default btn-lg">Add</div>
+                            <div className="col-sm-2"/>
                         </div>
                     </form>   
                 <Divider/>

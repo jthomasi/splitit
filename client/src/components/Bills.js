@@ -51,19 +51,21 @@ class Bills extends Component {
 
 	render(){
         return(
-            <Card>
-                <CardTitle title="Bills" subtitle="current bills"/>
-                <List>
-                    {this.listBills(["test","array"])}
-                </List>
-                <Divider/>
-                <CardActions>
-                    <div onClick={this.addBill}>
-                        <FlatButton label={this.state.isVisible ? "Close" : "Add Bill"}/>
-                    </div>
-                </CardActions>
-                {this.showBillAdd()}
-            </Card>
+            <div className="col-md-6">
+                <Card>
+                    <CardTitle title="Bills" subtitle="current bills"/>
+                    <List>
+                        {this.listBills(["test","array"])}
+                    </List>
+                    <Divider/>
+                    <CardActions>
+                        <div onClick={this.addBill}>
+                            <FlatButton label={this.state.isVisible ? "Close" : "Add Bill"}/>
+                        </div>
+                    </CardActions>
+                    {this.showBillAdd()}
+                </Card>
+            </div>
         );
     }
 	

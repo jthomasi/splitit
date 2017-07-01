@@ -43,8 +43,8 @@ class DashboardPage extends React.Component {
    */
   render() {
     return (
-    <div>
-      <Dashboard secretData={this.state.secretData} />
+    <div className="container">
+      {/*<Dashboard secretData={this.state.secretData} />*/}
       <Roommates/>
       <Bills/>
     </div>

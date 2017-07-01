@@ -52,19 +52,21 @@ class Roommates extends Component {
 
 	render(){
         return(
-            <Card>
-                <CardTitle title="Roommmates" subtitle="manage roommates"/>
-                <List>
-                    {this.listRoomies(["test","array"])}
-                </List>
-                <Divider/>
-                <CardActions>
-                    <div onClick={this.addRoomies}>
-                        <FlatButton label={this.state.isVisible ? "Close" : "Add Roommate"}/>
-                    </div>
-                </CardActions>
-                {this.showAddRM()}
-            </Card>
+            <div className="col-md-6">
+                <Card>
+                    <CardTitle title="Roommmates" subtitle="manage roommates"/>
+                    <List>
+                        {this.listRoomies(["test","array"])}
+                    </List>
+                    <Divider/>
+                    <CardActions>
+                        <div onClick={this.addRoomies}>
+                            <FlatButton label={this.state.isVisible ? "Close" : "Add Roommate"}/>
+                        </div>
+                    </CardActions>
+                    {this.showAddRM()}
+                </Card>
+            </div>
         );
     }
 

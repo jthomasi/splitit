@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import Divider from 'material-ui/Divider';
+import axios from 'axios';
 
 class AddRM extends Component{
     constructor(props){
@@ -19,8 +20,53 @@ class AddRM extends Component{
         event.preventDefault();
         console.log("roommate submitted");
 
+        const formData = {
+            name: this.state.roomName,
+            email: this.state.roomEmail,
+            percentage: this.state.billPercent,
+            homeemail: "poopy@gmail.com"
+        }
+
+        console.log(formData);
+    
+        axios({
+            method:'post',
+            url:'/api/addrm',
+            data: formData
+        }).then(function(response) {
+            console.log("yay "+formData);
+        });
+
         // send data to Roommates component and database
         // this.props.updateRoommate(this.state.roomName, this.state.roomEmail, this.state.billPercent);
+
+        // create a string for an HTTP body message
+        // const name = encodeURIComponent(this.state.roomName);
+        // const email = encodeURIComponent(this.state.roomEmail);
+        // const percentage = encodeURIComponent(this.state.billPercent);
+        // const homeemail = encodeURIComponent("poopy@gmail.com");
+        // const formData = `name=${name}&email=${email}&percentage=${percentage}&homeemail=${homeemail}`;
+
+        // // create an AJAX request
+        // const xhr = new XMLHttpRequest();
+        // xhr.open('post', '/api/addrm');
+        // xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        // xhr.responseType = 'json';
+        // xhr.addEventListener('load', () => {
+        // if (xhr.status === 200) {
+        //     // // success
+
+        //     // NEED TO RERENDER ROOMMATES
+
+
+        //     // // change the current URL to /
+        //     // this.context.router.replace('/');
+        // } else {
+        //     // failure
+
+        // }
+        // });
+        // xhr.send(formData);
     }
 
     handleChange(event){
@@ -33,22 +79,6 @@ class AddRM extends Component{
 
     render(){
         return(
-
-// import React, { PropTypes } from 'react';
-// import { Link } from 'react-router';
-// import RaisedButton from 'material-ui/RaisedButton';
-// import TextField from 'material-ui/TextField';
-// import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-// import FlatButton from 'material-ui/FlatButton';
-// import Divider from 'material-ui/Divider';
-
-// const AddRM = ({
-//   onSubmit,
-//   onChange,
-//   errors,
-//   roommate,
-//   home
-// }) => (
             <Card>
                 <CardTitle title="Add Roommate"/>
 
@@ -60,7 +90,7 @@ class AddRM extends Component{
                             <input type="text" 
                             value={this.state.roomName}                                        
                             onChange={this.handleChange}
-                            name="name"
+                            id="roomName"
                             className="form-control"/>
                         </div>
                         <div className="col-sm-2"/>
@@ -72,7 +102,7 @@ class AddRM extends Component{
                             <input type="email" 
                             value={this.state.roomEmail}                                        
                             onChange={this.handleChange}
-                            name="email"
+                            id="roomEmail"
                             className="form-control"/>
                         </div>
                         <div className="col-sm-2"/>
@@ -84,7 +114,7 @@ class AddRM extends Component{
                             <input type="number" 
                             value={this.state.billPercent}                                        
                             onChange={this.handleChange}
-                            name="percentage"
+                            id="billPercent"
                             className="form-control"/>
                         </div>
                         <div className="col-sm-2"/>
@@ -94,21 +124,12 @@ class AddRM extends Component{
                 <Divider/>
                 <CardActions>
                     <div onClick={this.handleSubmit}>
-                        <FlatButton type="submit" label="Add"/>
+                        <FlatButton label="Add"/>
                     </div>
                 </CardActions>
             </Card>
         );
     }
 }
-
-// LoginForm.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-//   onChange: PropTypes.func.isRequired,
-//   errors: PropTypes.object.isRequired,
-//   successMessage: PropTypes.string.isRequired,
-//   roommate: PropTypes.object.isRequired,
-//   home: PropTypes.object.isRequired
-// };
 
 export default AddRM;

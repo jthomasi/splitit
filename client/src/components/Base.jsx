@@ -5,7 +5,7 @@ import Auth from '../modules/Auth';
 
 const Base = ({ children }) => (
   <div>
-    <div className="top-bar">
+    <div className="top-bar container">
       <div className="top-bar-left">
         <IndexLink to="/">Splitit</IndexLink>
       </div>

@@ -14,5 +14,4 @@ var RoommateSchema = new Schema({
       }
 });
 
-var Roommate = mongoose.model("Roommate", RoommateSchema);
-module.exports = Roommate;
+module.exports = mongoose.model('Roommate', RoommateSchema);

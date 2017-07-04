@@ -7,9 +7,9 @@ class AddRM extends Component{
     constructor(props){
         super(props);
         this.state = {
-            roomName: "",
-            roomEmail: "",
-            billPercent: 0
+            name: "",
+            email: "",
+            percentage: 0
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);  
@@ -17,10 +17,35 @@ class AddRM extends Component{
 
     handleSubmit(event){
         event.preventDefault();
-        console.log("roommate submitted");
 
         // send data to Roommates component and database
         // this.props.updateRoommate(this.state.roomName, this.state.roomEmail, this.state.billPercent);
+
+        // create a string for an HTTP body message
+        const name = encodeURIComponent(this.state.roomName);
+        const email = encodeURIComponent(this.state.roomEmail);
+        const percentage = encodeURIComponent(this.state.billPercent);
+        const homeemail = encodeURIComponent("poopy@gmail.com");
+        const formData = `name=${name}&email=${email}&percentage=${percentage}&homeemail=${homeemail}`;
+
+        // create an AJAX request
+        const xhr = new XMLHttpRequest();
+        xhr.open('post', '/APIdb/addrm');
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.responseType = 'json';
+        xhr.addEventListener('load', () => {
+        if (xhr.status === 200) {
+            // // success
+
+            // NEED TO RERENDER ROOMMATES
+            // and clear the text boxes
+            
+        } else {
+            // failure
+        }
+        });
+        xhr.send(formData);
+        console.log("roommate submitted");
     }
 
     handleChange(event){

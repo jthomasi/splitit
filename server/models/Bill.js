@@ -9,9 +9,8 @@ var BillSchema = new Schema({
         type: Number,
       },
       due: {
-        type: Date,
+        type: String,
       }
 });
 
-var Bill = mongoose.model("Bill", BillSchema);
-module.exports = Bill;
+module.exports = mongoose.model('Bill', BillSchema);

@@ -1,29 +1,28 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const Schema = mongoose.Schema;
 
-// define the User model schema
-const HomeSchema = new mongoose.Schema({
-  name: {
-    type: String
-  },
-  email: {
-    type: String,
-    index: { unique: true }
-  },
-  password: {
-    type: String
-  }
-  // },
-  // roommates: [{
-  //   type: Schema.Types.ObjectId,
-  //   ref: "Roommate"
-  // }],
-  // bills: [{
-  //   type: Schema.Types.ObjectId,
-  //   ref: "Bill"
-  // }]
+// define the Home model schema
+const HomeSchema = new Schema({
+      name: {
+        type: String
+      },
+      email: {
+        type: String,
+        index: { unique: true }
+      },
+      password: {
+        type: String
+      },
+      roommates: [{
+        type: Schema.Types.ObjectId,
+        ref: "Roommate"
+      }],
+      bills: [{
+        type: Schema.Types.ObjectId,
+        ref: "Bill"
+      }]
 });
-
 
 /**
  * Compare the passed password with the value in the database. A model method.
@@ -59,6 +58,5 @@ HomeSchema.pre('save', function saveHook(next) {
     });
   });
 });
-
 
 module.exports = mongoose.model('Home', HomeSchema);

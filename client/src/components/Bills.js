@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import {List, ListItem} from 'material-ui/List';
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 
 import AddBill from "./AddBill";
@@ -60,7 +60,7 @@ class Bills extends Component {
                     <Divider/>
                     <CardActions>
                         <div onClick={this.addBill}>
-                            <FlatButton label={this.state.isVisible ? "Close" : "Add Bill"}/>
+                            <RaisedButton label={this.state.isVisible ? "Close" : "Add Bill"}/>
                         </div>
                     </CardActions>
                     {this.showBillAdd()}

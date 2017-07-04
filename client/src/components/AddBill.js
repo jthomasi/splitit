@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 
 class AddBills extends Component{
@@ -38,7 +38,7 @@ class AddBills extends Component{
                     <form className="form-horizontal" method="post" action="addbill">
                         {/*bill name*/}
                         <div className="form-group">
-                            <label className="col-sm-2 control-label">Bill Name</label>
+                            <label className="col-sm-3 control-label">Bill Name</label>
                             <div className="col-sm-8">
                                 <input type="text"
                                 value={this.state.billName}
@@ -46,11 +46,11 @@ class AddBills extends Component{
                                 id="billName"
                                 className="form-control"/>
                             </div>
-                            <div className="col-sm-2"/>
+                            <div className="col-sm-1"/>
                         </div>
                         {/*bill cost*/}
                         <div className="form-group">
-                            <label className="col-sm-2 control-label">Bill Cost</label>
+                            <label className="col-sm-3 control-label">Bill Cost</label>
                             <div className="col-sm-8">
                                 <input type="number"
                                 value={this.state.billCost}                                        
@@ -58,11 +58,11 @@ class AddBills extends Component{
                                 id="billCost"
                                 className="form-control"/>
                             </div>
-                            <div className="col-sm-2"/>
+                            <div className="col-sm-1"/>
                         </div>
                         {/*due date*/}
                         <div className="form-group">
-                            <label className="col-sm-2 control-label">Due Date</label>
+                            <label className="col-sm-3 control-label">Due Date</label>
                             <div className="col-sm-8">
                                 <input type="text" 
                                 value={this.state.dueDate}                                        
@@ -70,13 +70,13 @@ class AddBills extends Component{
                                 id="dueDate"
                                 className="form-control"/>
                             </div>
-                            <div className="col-sm-2"/>
+                            <div className="col-sm-1"/>
                         </div>
                     </form>   
                 <Divider/>
                 <CardActions>
                     <div onClick={this.handleSubmit}>
-                        <FlatButton label="Add"/>
+                        <RaisedButton label="Add"/>
                     </div>
                 </CardActions>
             </Card>            

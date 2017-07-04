@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import {List, ListItem} from 'material-ui/List';
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 
 import AddRM from "./AddRM";
@@ -61,7 +61,7 @@ class Roommates extends Component {
                     <Divider/>
                     <CardActions>
                         <div onClick={this.addRoomies}>
-                            <FlatButton label={this.state.isVisible ? "Close" : "Add Roommate"}/>
+                            <RaisedButton label={this.state.isVisible ? "Close" : "Add Roommate"}/>
                         </div>
                     </CardActions>
                     {this.showAddRM()}

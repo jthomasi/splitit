@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 
 class AddRM extends Component{
@@ -39,7 +39,7 @@ class AddRM extends Component{
                 <form className="form-horizontal" method="post" action="/addroommate">
                     {/*name*/}
                     <div className="form-group">
-                        <label className="col-sm-2 control-label">Name</label>
+                        <label className="col-sm-3 control-label">Name</label>
                         <div className="col-sm-8">
                             <input type="text" 
                             value={this.state.roomName}                                        
@@ -47,11 +47,11 @@ class AddRM extends Component{
                             id="roomName"
                             className="form-control"/>
                         </div>
-                        <div className="col-sm-2"/>
+                        <div className="col-sm-1"/>
                     </div>
                     {/*email*/}
                     <div className="form-group">
-                        <label className="col-sm-2 control-label">Email</label>
+                        <label className="col-sm-3 control-label">Email</label>
                         <div className="col-sm-8">
                             <input type="email" 
                             value={this.state.roomEmail}                                        
@@ -59,11 +59,11 @@ class AddRM extends Component{
                             id="roomEmail"
                             className="form-control"/>
                         </div>
-                        <div className="col-sm-2"/>
+                        <div className="col-sm-1"/>
                     </div>
                     {/*bill percent*/}
                     <div className="form-group">
-                        <label className="col-sm-2 control-label">Bill %</label>
+                        <label className="col-sm-3 control-label">Bill %</label>
                         <div className="col-sm-8">
                             <input type="number" 
                             value={this.state.billPercent}                                        
@@ -71,14 +71,14 @@ class AddRM extends Component{
                             id="billPercent"
                             className="form-control"/>
                         </div>
-                        <div className="col-sm-2"/>
+                        <div className="col-sm-1"/>
                     </div>
                 </form> 
 
                 <Divider/>
                 <CardActions>
                     <div onClick={this.handleSubmit}>
-                        <FlatButton label="Add"/>
+                        <RaisedButton label="Add"/>
                     </div>
                 </CardActions>
             </Card>

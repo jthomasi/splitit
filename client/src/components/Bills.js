@@ -1,4 +1,8 @@
 import React, {Component} from "react";
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {List, ListItem} from 'material-ui/List';
+import FlatButton from 'material-ui/FlatButton';
+import Divider from 'material-ui/Divider';
 
 import AddBill from "./AddBill";
 
@@ -22,7 +26,9 @@ class Bills extends Component {
         //show minus sign next to each name with delete db method
         return props.map((i)=>{
             return(
-                <li>{i}</li>
+                <ListItem
+                primaryText={i}
+                />
             );
         });
     }
@@ -46,21 +52,19 @@ class Bills extends Component {
 	render(){
         return(
             <div className="col-md-6">
-                <div className="panel panel-default">
-                    <div className="panel-heading">
-                        <div className="panel-title">Bills</div>
-                    </div>
-                    <div className="panel-body">
-                        <ul>{this.listBills(["test","array"])}</ul>
-                        <div className="btn-group">
-                            <button onClick={this.addBill} className="btn btn-default btn-lg">
-                                {this.state.isVisible ? "Close" : "Add bill"}
-                            </button>
+                <Card>
+                    <CardTitle title="Bills" subtitle="current bills"/>
+                    <List>
+                        {this.listBills(["test","array"])}
+                    </List>
+                    <Divider/>
+                    <CardActions>
+                        <div onClick={this.addBill}>
+                            <FlatButton label={this.state.isVisible ? "Close" : "Add Bill"}/>
                         </div>
-                    </div>
-                </div>
-                {/*conditionally render add*/}
-                {this.showBillAdd()}
+                    </CardActions>
+                    {this.showBillAdd()}
+                </Card>
             </div>
         );
     }

@@ -1,4 +1,7 @@
 import React, {Component} from "react";
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+import Divider from 'material-ui/Divider';
 
 class AddBills extends Component{
     constructor(props){
@@ -30,55 +33,53 @@ class AddBills extends Component{
 
     render(){
         return(
-            <div>
-                <div className="col-md-12">
-                    <div className="panel panel-default">
-                        <div className="panel-heading">
-                            <div className="panel-title">Add Bill</div>
+            <Card>
+                <CardTitle title="Add Bill"/>
+                    <form className="form-horizontal" method="post" action="addbill">
+                        {/*bill name*/}
+                        <div className="form-group">
+                            <label className="col-sm-2 control-label">Bill Name</label>
+                            <div className="col-sm-8">
+                                <input type="text"
+                                value={this.state.billName}
+                                onChange={this.handleChange}
+                                id="billName"
+                                className="form-control"/>
+                            </div>
+                            <div className="col-sm-2"/>
                         </div>
-                        <div className="panel-body">
-                            <form className="form-horizontal" method="post" action="addbill">
-                                {/*bill name*/}
-                                <div className="form-group">
-                                    <label className="col-sm-4 control-label">Bill Name</label>
-                                    <div className="col-sm-8">
-                                        <input type="text"
-                                        value={this.state.billName}
-                                        onChange={this.handleChange}
-                                        id="billName"
-                                        className="form-control"/>
-                                    </div>
-                                </div>
-                                {/*bill cost*/}
-                                <div className="form-group">
-                                    <label className="col-sm-4 control-label">Bill Cost</label>
-                                    <div className="col-sm-8">
-                                        <input type="number"
-                                        value={this.state.billCost}                                        
-                                        onChange={this.handleChange}
-                                        id="billCost"
-                                        className="form-control"/>
-                                    </div>
-                                </div>
-                                {/*due date*/}
-                                <div className="form-group">
-                                    <label className="col-sm-4 control-label">Due Date</label>
-                                    <div className="col-sm-8">
-                                        <input type="text" 
-                                        value={this.state.dueDate}                                        
-                                        onChange={this.handleChange}
-                                        id="dueDate"
-                                        className="form-control"/>
-                                    </div>
-                                </div>
-                                <div className="btn-group">
-                                    <div className="btn btn-default btn-lg">Add</div>
-                                </div>
-                            </form>                            
+                        {/*bill cost*/}
+                        <div className="form-group">
+                            <label className="col-sm-2 control-label">Bill Cost</label>
+                            <div className="col-sm-8">
+                                <input type="number"
+                                value={this.state.billCost}                                        
+                                onChange={this.handleChange}
+                                id="billCost"
+                                className="form-control"/>
+                            </div>
+                            <div className="col-sm-2"/>
                         </div>
+                        {/*due date*/}
+                        <div className="form-group">
+                            <label className="col-sm-2 control-label">Due Date</label>
+                            <div className="col-sm-8">
+                                <input type="text" 
+                                value={this.state.dueDate}                                        
+                                onChange={this.handleChange}
+                                id="dueDate"
+                                className="form-control"/>
+                            </div>
+                            <div className="col-sm-2"/>
+                        </div>
+                    </form>   
+                <Divider/>
+                <CardActions>
+                    <div onClick={this.handleSubmit}>
+                        <FlatButton label="Add"/>
                     </div>
-                </div>
-            </div>
+                </CardActions>
+            </Card>            
         );
     }
 }

@@ -5,6 +5,6 @@ Create a Home account. Add roommates. Add bills. Split the cost.
 
 # Members
 * [Paul D.](https://github.com/rukaroa)
-    React, routing, UX, migration
+    React, Material-UI, routing, UX, integration
 * [Jesse T.](https://github.com/jthomasi)
-    models, database, server, UX, login/authentication, migration
+    models, MongooseDB, server, UX, login/authentication, restructuring

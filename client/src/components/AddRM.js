@@ -7,9 +7,9 @@ class AddRM extends Component{
     constructor(props){
         super(props);
         this.state = {
-            roomName: "",
-            roomEmail: "",
-            billPercent: 0
+            name: "",
+            email: "",
+            percentage: 0
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);  
@@ -33,6 +33,22 @@ class AddRM extends Component{
 
     render(){
         return(
+
+// import React, { PropTypes } from 'react';
+// import { Link } from 'react-router';
+// import RaisedButton from 'material-ui/RaisedButton';
+// import TextField from 'material-ui/TextField';
+// import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+// import FlatButton from 'material-ui/FlatButton';
+// import Divider from 'material-ui/Divider';
+
+// const AddRM = ({
+//   onSubmit,
+//   onChange,
+//   errors,
+//   roommate,
+//   home
+// }) => (
             <Card>
                 <CardTitle title="Add Roommate"/>
 
@@ -44,7 +60,7 @@ class AddRM extends Component{
                             <input type="text" 
                             value={this.state.roomName}                                        
                             onChange={this.handleChange}
-                            id="roomName"
+                            name="name"
                             className="form-control"/>
                         </div>
                         <div className="col-sm-2"/>
@@ -56,7 +72,7 @@ class AddRM extends Component{
                             <input type="email" 
                             value={this.state.roomEmail}                                        
                             onChange={this.handleChange}
-                            id="roomEmail"
+                            name="email"
                             className="form-control"/>
                         </div>
                         <div className="col-sm-2"/>
@@ -68,7 +84,7 @@ class AddRM extends Component{
                             <input type="number" 
                             value={this.state.billPercent}                                        
                             onChange={this.handleChange}
-                            id="billPercent"
+                            name="percentage"
                             className="form-control"/>
                         </div>
                         <div className="col-sm-2"/>
@@ -78,12 +94,21 @@ class AddRM extends Component{
                 <Divider/>
                 <CardActions>
                     <div onClick={this.handleSubmit}>
-                        <FlatButton label="Add"/>
+                        <FlatButton type="submit" label="Add"/>
                     </div>
                 </CardActions>
             </Card>
         );
     }
 }
+
+// LoginForm.propTypes = {
+//   onSubmit: PropTypes.func.isRequired,
+//   onChange: PropTypes.func.isRequired,
+//   errors: PropTypes.object.isRequired,
+//   successMessage: PropTypes.string.isRequired,
+//   roommate: PropTypes.object.isRequired,
+//   home: PropTypes.object.isRequired
+// };
 
 export default AddRM;

@@ -28,9 +28,8 @@ router.post('/addrm', (req, res) => {
         }
         // Or send the newdoc to the browser
         else {
-          res.status(200).json({
-            data: newdoc
-          });
+          console.log("Hey it made it through the api/routes!")
+          res.send(newdoc);
         }
       });
     }

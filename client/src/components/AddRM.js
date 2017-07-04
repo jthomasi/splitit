@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import Divider from 'material-ui/Divider';
-import axios from 'axios';
 
 class AddRM extends Component{
     constructor(props){
@@ -18,55 +17,35 @@ class AddRM extends Component{
 
     handleSubmit(event){
         event.preventDefault();
-        console.log("roommate submitted");
-
-        const formData = {
-            name: this.state.roomName,
-            email: this.state.roomEmail,
-            percentage: this.state.billPercent,
-            homeemail: "poopy@gmail.com"
-        }
-
-        console.log(formData);
-    
-        axios({
-            method:'post',
-            url:'/api/addrm',
-            data: formData
-        }).then(function(response) {
-            console.log("yay "+formData);
-        });
 
         // send data to Roommates component and database
         // this.props.updateRoommate(this.state.roomName, this.state.roomEmail, this.state.billPercent);
 
         // create a string for an HTTP body message
-        // const name = encodeURIComponent(this.state.roomName);
-        // const email = encodeURIComponent(this.state.roomEmail);
-        // const percentage = encodeURIComponent(this.state.billPercent);
-        // const homeemail = encodeURIComponent("poopy@gmail.com");
-        // const formData = `name=${name}&email=${email}&percentage=${percentage}&homeemail=${homeemail}`;
+        const name = encodeURIComponent(this.state.roomName);
+        const email = encodeURIComponent(this.state.roomEmail);
+        const percentage = encodeURIComponent(this.state.billPercent);
+        const homeemail = encodeURIComponent("poopy@gmail.com");
+        const formData = `name=${name}&email=${email}&percentage=${percentage}&homeemail=${homeemail}`;
 
-        // // create an AJAX request
-        // const xhr = new XMLHttpRequest();
-        // xhr.open('post', '/api/addrm');
-        // xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        // xhr.responseType = 'json';
-        // xhr.addEventListener('load', () => {
-        // if (xhr.status === 200) {
-        //     // // success
+        // create an AJAX request
+        const xhr = new XMLHttpRequest();
+        xhr.open('post', '/APIdb/addrm');
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.responseType = 'json';
+        xhr.addEventListener('load', () => {
+        if (xhr.status === 200) {
+            // // success
 
-        //     // NEED TO RERENDER ROOMMATES
-
-
-        //     // // change the current URL to /
-        //     // this.context.router.replace('/');
-        // } else {
-        //     // failure
-
-        // }
-        // });
-        // xhr.send(formData);
+            // NEED TO RERENDER ROOMMATES
+            // and clear the text boxes
+            
+        } else {
+            // failure
+        }
+        });
+        xhr.send(formData);
+        console.log("roommate submitted");
     }
 
     handleChange(event){

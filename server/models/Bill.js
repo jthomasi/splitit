@@ -9,7 +9,7 @@ var BillSchema = new Schema({
         type: Number,
       },
       due: {
-        type: Date,
+        type: String,
       }
 });
 

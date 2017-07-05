@@ -1,9 +1,7 @@
 import React from 'react';
 import Auth from '../modules/Auth';
-import Dashboard from '../components/Dashboard.jsx';
 import Bills from "../components/Bills.js";
 import Roommates from "../components/Roommates.js";
-
 
 class DashboardPage extends React.Component {
 
@@ -14,7 +12,9 @@ class DashboardPage extends React.Component {
     super(props);
 
     this.state = {
-      secretData: ''
+      homeemail: '',
+      roommates: [],
+      bills: []
     };
   }
 
@@ -31,7 +31,8 @@ class DashboardPage extends React.Component {
     xhr.addEventListener('load', () => {
       if (xhr.status === 200) {
         this.setState({
-          secretData: xhr.response.message
+          roommates: xhr.response[0].roommates,
+          bills: xhr.response[0].bills
         });
       }
     });
@@ -44,9 +45,9 @@ class DashboardPage extends React.Component {
   render() {
     return (
     <div className="container">
-      {/*<Dashboard secretData={this.state.secretData} />*/}
-      <Roommates/>
-      <Bills/>
+      {/* Want to add previous roommate and bill data here as props*/}
+      <Roommates roommates={this.state.roommates} />
+      <Bills bills={this.state.bills} />
     </div>
     );
   }

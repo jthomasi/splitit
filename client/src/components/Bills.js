@@ -22,12 +22,12 @@ class Bills extends Component {
     //conditionally render add scene after clicking on AddBill
     //clicking button will show Addbill/cancel
     //addbill fields may be retained; to solve
-    listBills(props){
+    listBills(){
         //show minus sign next to each name with delete db method
-        return props.map((i)=>{
+        return this.props.bills.map((i)=>{
             return(
                 <ListItem
-                primaryText={i}
+                primaryText={i.name}
                 />
             );
         });
@@ -55,7 +55,7 @@ class Bills extends Component {
                 <Card>
                     <CardTitle title="Bills" subtitle="current bills"/>
                     <List>
-                        {this.listBills(["test","array"])}
+                        {this.listBills()}
                     </List>
                     <Divider/>
                     <CardActions>

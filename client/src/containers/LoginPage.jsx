@@ -60,10 +60,9 @@ class LoginPage extends React.Component {
           errors: {}
         });
 
-        // save the token
+        // save the token and email
         Auth.authenticateUser(xhr.response.token);
-        // we can access the user email we need from here (xhr.response.user.email)
-
+        Auth.storeEmail(this.state.user.email);
         // change the current URL to /
         this.context.router.replace('/');
       } else {

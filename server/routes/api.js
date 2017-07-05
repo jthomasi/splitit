@@ -7,11 +7,11 @@ const passport = require('passport');
 const router = new express.Router();
 
 // this is where we will passing data from the login to the dashboard
-router.get('/dashboard', (req, res) => {
-  // console.log("dashboard data: "+JSON.stringify(req.body, null, 4));
-  // needs a unique _id from the home account
-  var _id = "5957d45e13b742620c5ec43e";
-  Home.find({ "_id": _id })
+router.post('/dashboard', (req, res) => {
+  console.log("inside api.js should be email: "+req.body.email);
+  const decodedEmail = decodeURIComponent(req.body.email);
+
+  Home.findOne({ "email": decodedEmail })
     .populate(["bills", "roommates"])
     .exec(function(error, doc) {
       if (error) {

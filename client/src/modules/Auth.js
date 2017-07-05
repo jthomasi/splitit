@@ -24,6 +24,7 @@ class Auth {
    */
   static deauthenticateUser() {
     localStorage.removeItem('token');
+    localStorage.removeItem('homeemail');
   }
 
   /**
@@ -34,6 +35,14 @@ class Auth {
 
   static getToken() {
     return localStorage.getItem('token');
+  }
+
+  static storeEmail(email) {
+    localStorage.setItem('homeemail', email);
+  }
+
+  static grabEmail() {
+    return localStorage.getItem('homeemail');
   }
 
 }

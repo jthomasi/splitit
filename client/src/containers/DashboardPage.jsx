@@ -12,7 +12,6 @@ class DashboardPage extends React.Component {
     super(props);
 
     this.state = {
-      homeemail: '',
       roommates: [],
       bills: []
     };
@@ -22,21 +21,29 @@ class DashboardPage extends React.Component {
    * This method will be executed after initial rendering.
    */
   componentDidMount() {
+
+    const homeemail = encodeURIComponent(Auth.grabEmail());
+    const formData = `email=${homeemail}`;
+
+    console.log("pre-dashboard request "+homeemail);
+
     const xhr = new XMLHttpRequest();
-    xhr.open('get', '/api/dashboard');
+    xhr.open('post', '/api/dashboard');
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     // set the authorization HTTP header
     xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
     xhr.responseType = 'json';
     xhr.addEventListener('load', () => {
       if (xhr.status === 200) {
+        console.log(xhr.response);
         this.setState({
-          roommates: xhr.response[0].roommates,
-          bills: xhr.response[0].bills
+          roommates: xhr.response.roommates,
+          bills: xhr.response.bills
         });
+        
       }
     });
-    xhr.send();
+    xhr.send(formData);
   }
 
   /**

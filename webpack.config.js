@@ -21,7 +21,10 @@ module.exports = {
       query: {
         presets: ["react", "es2015"]
       }
-    }],
+    },
+    //allows images to be displayed from local files
+    { test: /\.(png|jpg)$/, loader: 'url-loader' }
+    ],
   },
 
   // start Webpack in a watch mode, so Webpack will rebuild the bundle on changes

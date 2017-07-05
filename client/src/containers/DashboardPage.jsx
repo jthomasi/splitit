@@ -1,6 +1,5 @@
 import React from 'react';
 import Auth from '../modules/Auth';
-import Dashboard from '../components/Dashboard.jsx';
 import Bills from "../components/Bills.js";
 import Roommates from "../components/Roommates.js";
 
@@ -46,7 +45,6 @@ class DashboardPage extends React.Component {
   render() {
     return (
     <div className="container">
-      {/*<Dashboard secretData={this.state.secretData} />*/}
       {/* Want to add previous roommate and bill data here as props*/}
       <Roommates roommates={this.state.roommates} />
       <Bills bills={this.state.bills} />

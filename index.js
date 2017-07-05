@@ -28,10 +28,8 @@ app.use('/api', authCheckMiddleware);
 // routes
 const authRoutes = require('./server/routes/auth');
 const apiRoutes = require('./server/routes/api');
-const APIdbRoutes = require('./server/routes/APIdb');
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
-app.use('/APIdb', APIdbRoutes);
 
 // start the server
 app.listen(3000, () => {

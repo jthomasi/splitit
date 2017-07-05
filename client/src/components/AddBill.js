@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
+import Auth from '../modules/Auth';
 
 class AddBills extends Component{
     constructor(props){
@@ -28,6 +29,22 @@ class AddBills extends Component{
         const homeemail = encodeURIComponent("poopy@gmail.com");
         const formData = `name=${name}&cost=${cost}&due=${due}&homeemail=${homeemail}`;
 
+        // const xhr = new XMLHttpRequest();
+        // xhr.open('post', '/APIdb/addrm');
+        // xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        // // set the authorization HTTP header
+        // xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
+        // xhr.responseType = 'json';
+        // xhr.addEventListener('load', () => {
+        // if (xhr.status === 200) {
+        //     this.setState({
+        //     roommates: xhr.response[0].roommates,
+        //     bills: xhr.response[0].bills
+        //     });
+        // }
+        // });
+        // xhr.send();
+
         // create an AJAX request
         const xhr = new XMLHttpRequest();
         xhr.open('post', '/APIdb/addbill');
@@ -39,6 +56,8 @@ class AddBills extends Component{
 
             // NEED TO RERENDER BILLS
             // and clear text boxes 
+            // change the current URL to /
+            // this.context.router.replace('/');
             
         } else {
             // failure

@@ -10,7 +10,7 @@ class Roommates extends Component {
     constructor(props){
         super(props);
         this.state = {
-          isVisible: false  
+          isVisible: false
         };
         this.addRoomies = this.addRoomies.bind(this);
         this.listRoomies = this.listRoomies.bind(this);
@@ -22,12 +22,12 @@ class Roommates extends Component {
     //conditionally render add scene after clicking on add roommate
     //clicking button will show add roommate /cancel
     //add roommate fields may be retained; to solve
-    listRoomies(props){
+    listRoomies(){
         //show minus sign next to each name with delete db method        
-        return props.map((i)=>{
+        return this.props.roommates.map((i)=>{
             return(
                 <ListItem
-                primaryText={i}
+                primaryText={i.name}
                 />
             );
         });
@@ -56,7 +56,7 @@ class Roommates extends Component {
                 <Card>
                     <CardTitle title="Roommmates" subtitle="manage roommates"/>
                     <List>
-                        {this.listRoomies(["test","array"])}
+                        {this.listRoomies()}
                     </List>
                     <Divider/>
                     <CardActions>

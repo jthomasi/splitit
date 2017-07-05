@@ -4,12 +4,12 @@ import { Card, CardTitle, CardMedia, CardText } from 'material-ui/Card';
 
 const HomePage = () => (
   <Card className="container">
-    <CardTitle title="Splitit User Authentication" subtitle="This is the home page." />
+    <CardTitle title="Welcome to Splitit!" subtitle="Split the bill with your roommates, easy(ier)" />
     <CardMedia>
-      <img src="../../dist/img/split-rent.jpg" alt="front"/>
+      <img src="../../dist/img/split-rent.jpg"/>
     </CardMedia>
     <CardText>
-      <p>Split the bill with your roommates, easy(ier)</p>
+      <p>Please sign in.</p>
     </CardText>
   </Card>
 );

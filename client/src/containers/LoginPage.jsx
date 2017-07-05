@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import Auth from '../modules/Auth';
 import LoginForm from '../components/LoginForm.jsx';
 
-
 class LoginPage extends React.Component {
 
   /**
@@ -63,7 +62,7 @@ class LoginPage extends React.Component {
 
         // save the token
         Auth.authenticateUser(xhr.response.token);
-
+        // we can access the user email we need from here (xhr.response.user.email)
 
         // change the current URL to /
         this.context.router.replace('/');

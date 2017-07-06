@@ -26,7 +26,7 @@ class AddBills extends Component{
         const name = encodeURIComponent(this.state.billName);
         const cost = encodeURIComponent(this.state.billCost);
         const due = encodeURIComponent(this.state.dueDate);
-        const homeemail = encodeURIComponent("poopy@gmail.com");
+        const homeemail = encodeURIComponent(Auth.grabEmail());
         const formData = `name=${name}&cost=${cost}&due=${due}&homeemail=${homeemail}`;
 
         const xhr = new XMLHttpRequest();
@@ -40,13 +40,12 @@ class AddBills extends Component{
             // success
 
             // NEED TO RERENDER BILLS and clear text boxes 
-
+            console.log("bill submitted");
             // change the current URL to /
             // this.context.router.replace('/');
         }
         });
         xhr.send(formData);
-        console.log("bill submitted");
     }
 
     handleChange(event){

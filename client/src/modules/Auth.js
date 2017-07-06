@@ -23,8 +23,7 @@ class Auth {
    *
    */
   static deauthenticateUser() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('homeemail');
+    localStorage.removeItem('token', 'homeemail');
   }
 
   /**

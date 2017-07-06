@@ -21,11 +21,9 @@ class DashboardPage extends React.Component {
    * This method will be executed after initial rendering.
    */
   componentDidMount() {
-
+    
     const homeemail = encodeURIComponent(Auth.grabEmail());
     const formData = `email=${homeemail}`;
-
-    console.log("pre-dashboard request "+homeemail);
 
     const xhr = new XMLHttpRequest();
     xhr.open('post', '/api/dashboard');

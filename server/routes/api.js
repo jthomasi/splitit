@@ -8,9 +8,7 @@ const router = new express.Router();
 
 // this is where we will passing data from the login to the dashboard
 router.post('/dashboard', (req, res) => {
-  console.log("inside api.js should be email: "+req.body.email);
   const decodedEmail = decodeURIComponent(req.body.email);
-
   Home.findOne({ "email": decodedEmail })
     .populate(["bills", "roommates"])
     .exec(function(error, doc) {
@@ -24,6 +22,7 @@ router.post('/dashboard', (req, res) => {
 });
 
 router.post("/addrm", (req, res) => {
+  const decodedEmail = decodeURIComponent(req.body.homeemail);
   const rmData = {
       'name': req.body.name,
       'email': req.body.email,
@@ -38,7 +37,7 @@ router.post("/addrm", (req, res) => {
       // Otherwise
       else {
         // Find our user and push the new note id into the User's notes array
-        Home.findOneAndUpdate({ "email": req.body.homeemail }, { $push: { "roommates": doc._id } }, { new: true }, function(err, newdoc) {
+        Home.findOneAndUpdate({ "email": decodedEmail }, { $push: { "roommates": doc._id } }, { new: true }, function(err, newdoc) {
             // Send any errors to the browser
             if (err) {
               res.send(err);
@@ -54,6 +53,7 @@ router.post("/addrm", (req, res) => {
 });
 
 router.post("/addbill", (req, res) => {
+  const decodedEmail = decodeURIComponent(req.body.homeemail);
   const billData = {
       'name': req.body.name,
       'cost': req.body.cost,
@@ -68,7 +68,7 @@ router.post("/addbill", (req, res) => {
       // Otherwise
       else {
         // Find our user and push the new note id into the User's notes array
-        Home.findOneAndUpdate({ "email": req.body.homeemail }, { $push: { "bills": doc._id } }, { new: true }, function(err, newdoc) {
+        Home.findOneAndUpdate({ "email": decodedEmail }, { $push: { "bills": doc._id } }, { new: true }, function(err, newdoc) {
             // Send any errors to the browser
             if (err) {
               res.send(err);

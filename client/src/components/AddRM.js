@@ -26,8 +26,10 @@ class AddRM extends Component{
         const name = encodeURIComponent(this.state.roomName);
         const email = encodeURIComponent(this.state.roomEmail);
         const percentage = encodeURIComponent(this.state.billPercent);
-        const homeemail = encodeURIComponent("poopy@gmail.com");
+        const homeemail = encodeURIComponent(Auth.grabEmail());
         const formData = `name=${name}&email=${email}&percentage=${percentage}&homeemail=${homeemail}`;
+
+        console.log("pre-addrm email: "+homeemail);
 
         const xhr = new XMLHttpRequest();
         xhr.open('post', '/api/addrm');
@@ -40,7 +42,7 @@ class AddRM extends Component{
             // success
 
             // NEED TO RERENDER ROOMMATES and clear the text boxes
-        
+            console.log("roommate submitted");
             // change the current URL to /
             // this.context.router.replace('/');
         } else {
@@ -48,7 +50,6 @@ class AddRM extends Component{
         }
         });
         xhr.send(formData);
-        console.log("roommate submitted");
     }
 
     handleChange(event){

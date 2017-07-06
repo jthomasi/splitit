@@ -48,10 +48,15 @@ class DashboardPage extends React.Component {
    * Render the component.
    */
   render() {
+    let billTotal = 0;
+    this.state.bills.map((i)=>{
+      billTotal += i.cost;
+    });
+
     return (
     <div className="container">
       {/* Want to add previous roommate and bill data here as props*/}
-      <Roommates roommates={this.state.roommates} />
+      <Roommates roommates={this.state.roommates} billTotal={billTotal}/>
       <Bills bills={this.state.bills} />
     </div>
     );

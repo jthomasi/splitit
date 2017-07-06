@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import DatePicker from 'material-ui/DatePicker';
+import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 import Auth from '../modules/Auth';
@@ -8,6 +10,7 @@ class AddBills extends Component{
     constructor(props){
         super(props);
         this.state = {
+            bills: "",
             billName: "",
             billCost: 0,
             dueDate: ""
@@ -16,11 +19,18 @@ class AddBills extends Component{
         this.handleSubmit = this.handleSubmit.bind(this); 
     }
 
+    //will receive bills props from Bills
+    componentWillReceiveProps(nextProps) {
+        console.log(`next props is {nextProps.bills}`);
+        if(nextProps.bills !== this.state.bills){
+            this.setState({bills: nextProps.bills});
+        }
+    }
+
     handleSubmit(event){
         event.preventDefault();
 
         // send data to Bills component and database
-        // this.props.updateBill(this.state.billName, this.state.billCost, this.state.dueDate);
 
         // create a string for an HTTP body message
         const name = encodeURIComponent(this.state.billName);
@@ -39,21 +49,32 @@ class AddBills extends Component{
         if (xhr.status === 200) {
             // success
 
-            // NEED TO RERENDER BILLS and clear text boxes 
+            // NEED TO RERENDER BILLS
             console.log("bill submitted");
             // change the current URL to /
             // this.context.router.replace('/');
+
+            //change entry fields to empty
+            this.setState({billName: ""});
+            this.setState({billCost: 0});
+            this.setState({dueDate: ""});
         }
         });
         xhr.send(formData);
     }
 
-    handleChange(event){
+    handleChange(event, date){
         console.log("bill value change");
-
-        let newState = {};
-        newState[event.target.id] = event.target.value;
-        this.setState(newState);
+        
+        if (event != null){
+            let newState = {};
+            newState[event.target.id] = event.target.value;
+            this.setState(newState);
+        } else {
+            this.setState({
+                dueDate: date
+            });
+        }
     }
 
     render(){
@@ -63,40 +84,42 @@ class AddBills extends Component{
                     <form className="form-horizontal" method="post" action="addbill">
                         {/*bill name*/}
                         <div className="form-group">
-                            <label className="col-sm-3 control-label">Bill Name</label>
+                            <div className="col-sm-2"/>
                             <div className="col-sm-8">
-                                <input type="text"
+                                <TextField type="text"
                                 value={this.state.billName}
                                 onChange={this.handleChange}
                                 id="billName"
-                                className="form-control"/>
+                                floatingLabelText="Bill Name"
+                                hintText="ex. Internet"/>
                             </div>
-                            <div className="col-sm-1"/>
+                            <div className="col-sm-2"/>
                         </div>
                         {/*bill cost*/}
                         <div className="form-group">
-                            <label className="col-sm-3 control-label">Bill Cost</label>
+                            <div className="col-sm-2"/>
                             <div className="col-sm-8">
-                                <input type="number"
+                                <TextField type="number"
                                 value={this.state.billCost}                                        
                                 onChange={this.handleChange}
                                 id="billCost"
-                                className="form-control"/>
+                                floatingLabelText="Bill Cost"                                
+                                hintText="ex. 500"/>
                             </div>
-                            <div className="col-sm-1"/>
+                            <div className="col-sm-2"/>
                         </div>
                         {/*due date*/}
-                        {/*change to Date Picker, controlled date input*/}
                         <div className="form-group">
-                            <label className="col-sm-3 control-label">Due Date</label>
+                            <div className="col-sm-2"/>
                             <div className="col-sm-8">
-                                <input type="text" 
-                                value={this.state.dueDate}                                        
+                                <DatePicker
+                                hintText="Due Date" 
+                                value={this.state.dueDate}  
+                                floatingLabelText="Due Date"                                                                      
                                 onChange={this.handleChange}
-                                id="dueDate"
-                                className="form-control"/>
+                                id="dueDate"/>
                             </div>
-                            <div className="col-sm-1"/>
+                            <div className="col-sm-2"/>
                         </div>
                     </form>   
                 <Divider/>

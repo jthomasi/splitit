@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 import Auth from '../modules/Auth';
@@ -8,6 +9,7 @@ class AddRM extends Component{
     constructor(props){
         super(props);
         this.state = {
+            roommates: "",
             name: "",
             email: "",
             percentage: 0
@@ -16,11 +18,18 @@ class AddRM extends Component{
         this.handleSubmit = this.handleSubmit.bind(this);  
     }
 
+    //will receive roommates props from Roommates
+    componentWillReceiveProps(nextProps) {
+        console.log(`next props is {nextProps.roommates}`);
+        if(nextProps.roommates !== this.state.roommates){
+            this.setState({roommates: nextProps.roommates});
+        }
+    }
+
     handleSubmit(event){
         event.preventDefault();
 
         // send data to Roommates component and database
-        // this.props.updateRoommate(this.state.roomName, this.state.roomEmail, this.state.billPercent);
 
         // create a string for an HTTP body message
         const name = encodeURIComponent(this.state.roomName);
@@ -41,12 +50,18 @@ class AddRM extends Component{
         if (xhr.status === 200) {
             // success
 
-            // NEED TO RERENDER ROOMMATES and clear the text boxes
+            // NEED TO RERENDER ROOMMATES
             console.log("roommate submitted");
             // change the current URL to /
             // this.context.router.replace('/');
+
+            //change entry fields to be empty
+            this.setState({roomName: ""});
+            this.setState({roomEmail: ""});
+            this.setState({billPercent: 0});
         } else {
             // failure
+            console.log("Failed request");
         }
         });
         xhr.send(formData);
@@ -56,55 +71,58 @@ class AddRM extends Component{
         console.log("roommate value change");
 
         let newState = {};
+        //round bill% to nearest 0.1
         newState[event.target.id] = event.target.value;
         this.setState(newState);
     }
 
     render(){
-        //add text field fanciness
         return(
             <Card>
                 <CardTitle title="Add Roommate"/>
-
+                <CardActions>
                 <form className="form-horizontal" method="post" action="/addroommate">
                     {/*name*/}
                     <div className="form-group">
-                        <label className="col-sm-3 control-label">Name</label>
+                        <div className="col-sm-2"/>
                         <div className="col-sm-8">
-                            <input type="text" 
+                            <TextField type="text" 
                             value={this.state.roomName}                                        
                             onChange={this.handleChange}
                             id="roomName"
-                            className="form-control"/>
+                            floatingLabelText="Roommate Name"
+                            hintText="ex. John"/>
                         </div>
-                        <div className="col-sm-1"/>
+                        <div className="col-sm-2"/>
                     </div>
                     {/*email*/}
                     <div className="form-group">
-                        <label className="col-sm-3 control-label">Email</label>
+                        <div className="col-sm-2"/>
                         <div className="col-sm-8">
-                            <input type="email" 
+                            <TextField type="email"
                             value={this.state.roomEmail}                                        
                             onChange={this.handleChange}
                             id="roomEmail"
-                            className="form-control"/>
+                            floatingLabelText="Roommate Email"
+                            hintText="ex. email@example.com"/>
                         </div>
-                        <div className="col-sm-1"/>
+                        <div className="col-sm-2"/>
                     </div>
                     {/*bill percent*/}
                     <div className="form-group">
-                        <label className="col-sm-3 control-label">Bill %</label>
+                        <div className="col-sm-2"/>
                         <div className="col-sm-8">
-                            <input type="number" 
+                            <TextField type="number" 
                             value={this.state.billPercent}                                        
                             onChange={this.handleChange}
                             id="billPercent"
-                            className="form-control"/>
+                            floatingLabelText="Bill %"
+                            hintText="ex. 50"/>
                         </div>
-                        <div className="col-sm-1"/>
+                        <div className="col-sm-2"/>
                     </div>
                 </form> 
-
+                </CardActions>
                 <Divider/>
                 <CardActions>
                     <div onClick={this.handleSubmit}>

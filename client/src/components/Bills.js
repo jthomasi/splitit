@@ -33,7 +33,7 @@ class Bills extends Component {
             return(
                 <TableRow>
                     <TableRowColumn>{i.name}</TableRowColumn>
-                    <TableRowColumn>{i.cost}</TableRowColumn>      
+                    <TableRowColumn>${i.cost}</TableRowColumn>      
                 </TableRow>  
             );
         });
@@ -47,7 +47,7 @@ class Bills extends Component {
         console.log("showBillAdd");
         if (this.state.isVisible) {
             return(
-                <AddBill bills={this.props.bills}/>
+                <AddBill/>
             );
         } else {
             console.log("no render");
@@ -88,7 +88,7 @@ class Bills extends Component {
                     </Table>
                     <Divider/>
                     <CardText>
-                        Total Bill: {this.totalBill()}
+                        Total Bill: ${this.totalBill()}
                     </CardText>
                     <Divider/>
                     <CardActions>

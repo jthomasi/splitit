@@ -1,6 +1,13 @@
 import React, {Component} from "react";
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import {List, ListItem} from 'material-ui/List';
+import {
+  Table,
+  TableBody,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn,
+} from 'material-ui/Table';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 
@@ -19,16 +26,17 @@ class Bills extends Component {
     //add case for no bills when props[] == 0
     //display bill name, bill cost, and bill total
     
-    //conditionally render add scene after clicking on AddBill
-    //clicking button will show Addbill/cancel
     //addbill fields may be retained; to solve
     listBills(){
         //show minus sign next to each name with delete db method
         return this.props.bills.map((i)=>{
+        // let test = [1,2,3,4,5];
+        // return test.map((i)=>{
             return(
-                <ListItem
-                primaryText={i.name}
-                />
+                <TableRow>
+                    <TableRowColumn>{i}</TableRowColumn>
+                    <TableRowColumn>{i}</TableRowColumn>      
+                </TableRow>  
             );
         });
     }
@@ -54,9 +62,17 @@ class Bills extends Component {
             <div className="col-md-6">
                 <Card>
                     <CardTitle title="Bills" subtitle="current bills"/>
-                    <List>
-                        {this.listBills()}
-                    </List>
+                    <Table>
+                        <TableHeader>
+                            <TableRow>
+                                <TableHeaderColumn>Bill</TableHeaderColumn>
+                                <TableHeaderColumn>Amount</TableHeaderColumn>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {this.listBills()}
+                        </TableBody>                           
+                    </Table>
                     <Divider/>
                     <CardActions>
                         <div onClick={this.addBill}>

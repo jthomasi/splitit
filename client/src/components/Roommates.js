@@ -1,6 +1,15 @@
 import React, {Component} from "react";
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import {List, ListItem} from 'material-ui/List';
+import Badge from "material-ui/Badge";
+import Chip from "material-ui/Chip";
+import {
+  Table,
+  TableBody,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn,
+} from 'material-ui/Table';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 
@@ -18,19 +27,30 @@ class Roommates extends Component {
     }
     //add case for no roommates when props[] == 0
     // show %share of bill
-    
-    //conditionally render add scene after clicking on add roommate
-    //clicking button will show add roommate /cancel
+
     //add roommate fields may be retained; to solve
     listRoomies(){
-        //show minus sign next to each name with delete db method        
+        //show minus sign next to each name with delete db method 
+        //check contents of roommates Table
         return this.props.roommates.map((i)=>{
+        // let test = [1,2,3,4,5,6]               
+        // return test.map((i)=>{
             return(
-                <ListItem
-                primaryText={i.name}
-                />
+                <TableRow>
+                    <TableRowColumn>{i}</TableRowColumn>
+                    <TableRowColumn>{i}</TableRowColumn>      
+                </TableRow>                
             );
         });
+    }
+
+    handleRequestDelete(){
+        //add delete route
+    }
+
+    onTouchTap(){
+        //ask if it's okay to delete before deleting
+        //reconfigure bill split to be even with all remaining roommates
     }
 
     addRoomies() {
@@ -53,11 +73,28 @@ class Roommates extends Component {
 	render(){
         return(
             <div className="col-md-6">
-                <Card>
-                    <CardTitle title="Roommmates" subtitle="manage roommates"/>
-                    <List>
-                        {this.listRoomies()}
-                    </List>
+                <Card> 
+                    {/*display number of roommmates*/}                                      
+                    <CardTitle title={
+                        <Badge                                                  
+                            badgeContent={this.props.roommates.length()}
+                            primary={true}
+                        >
+                        "Roommmates"
+                        </Badge>
+                        } subtitle="manage roommates"/>
+                    
+                    <Table>
+                        <TableHeader>
+                            <TableRow>
+                                <TableHeaderColumn>Name</TableHeaderColumn>
+                                <TableHeaderColumn>Bill Share</TableHeaderColumn>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {this.listRoomies()}
+                        </TableBody>                           
+                    </Table>
                     <Divider/>
                     <CardActions>
                         <div onClick={this.addRoomies}>

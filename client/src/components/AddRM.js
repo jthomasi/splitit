@@ -26,11 +26,7 @@ class AddRM extends Component{
         const name = encodeURIComponent(this.state.roomName);
         const email = encodeURIComponent(this.state.roomEmail);
         const percentage = encodeURIComponent(this.state.billPercent);
-<<<<<<< HEAD
         const homeemail = encodeURIComponent(Auth.grabEmail());
-=======
-        const homeemail = encodeURIComponent("test@test.com");
->>>>>>> 72f37d4c1ec4667d3efa7972ad04a28a4e1258d2
         const formData = `name=${name}&email=${email}&percentage=${percentage}&homeemail=${homeemail}`;
 
         console.log("pre-addrm email: "+homeemail);

@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import Badge from "material-ui/Badge";
+import Chip from "material-ui/Chip";
 import {
   Table,
   TableBody,
@@ -34,8 +36,8 @@ class Bills extends Component {
         // return test.map((i)=>{
             return(
                 <TableRow>
-                    <TableRowColumn>{i}</TableRowColumn>
-                    <TableRowColumn>{i}</TableRowColumn>      
+                    <TableRowColumn>{i.name}</TableRowColumn>
+                    <TableRowColumn>{i.cost}</TableRowColumn>      
                 </TableRow>  
             );
         });
@@ -61,7 +63,14 @@ class Bills extends Component {
         return(
             <div className="col-md-6">
                 <Card>
-                    <CardTitle title="Bills" subtitle="current bills"/>
+                    <CardTitle title={
+                        <Badge                                                  
+                            badgeContent={this.props.bills.length}
+                            primary={true}
+                        >
+                        "Bills"
+                        </Badge>
+                        } subtitle="manage roommates"/>
                     <Table>
                         <TableHeader>
                             <TableRow>

@@ -37,8 +37,8 @@ class Roommates extends Component {
         // return test.map((i)=>{
             return(
                 <TableRow>
-                    <TableRowColumn>{i}</TableRowColumn>
-                    <TableRowColumn>{i}</TableRowColumn>      
+                    <TableRowColumn>{i.name}</TableRowColumn>
+                    <TableRowColumn>{i.percentage}</TableRowColumn>      
                 </TableRow>                
             );
         });
@@ -77,7 +77,7 @@ class Roommates extends Component {
                     {/*display number of roommmates*/}                                      
                     <CardTitle title={
                         <Badge                                                  
-                            badgeContent={this.props.roommates.length()}
+                            badgeContent={this.props.roommates.length}
                             primary={true}
                         >
                         "Roommmates"
@@ -88,7 +88,7 @@ class Roommates extends Component {
                         <TableHeader>
                             <TableRow>
                                 <TableHeaderColumn>Name</TableHeaderColumn>
-                                <TableHeaderColumn>Bill Share</TableHeaderColumn>
+                                <TableHeaderColumn>Bill Share %</TableHeaderColumn>
                             </TableRow>
                         </TableHeader>
                         <TableBody>

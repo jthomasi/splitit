@@ -104,7 +104,8 @@ class AddBills extends Component{
                                 onChange={this.handleChange}
                                 id="billCost"
                                 floatingLabelText="Bill Cost"                                
-                                hintText="ex. 500"/>
+                                hintText="ex. 500"
+                                min={0}/>
                             </div>
                             <div className="col-sm-2"/>
                         </div>

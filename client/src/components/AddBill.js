@@ -53,7 +53,7 @@ class AddBills extends Component{
             console.log("bill submitted");
             // change the current URL to /
             // this.context.router.replace('/');
-
+            window.location.reload();
             //change entry fields to empty
             this.setState({billName: ""});
             this.setState({billCost: 0});

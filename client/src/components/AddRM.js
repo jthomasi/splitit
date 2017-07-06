@@ -26,7 +26,7 @@ class AddRM extends Component{
         const name = encodeURIComponent(this.state.roomName);
         const email = encodeURIComponent(this.state.roomEmail);
         const percentage = encodeURIComponent(this.state.billPercent);
-        const homeemail = encodeURIComponent("poopy@gmail.com");
+        const homeemail = encodeURIComponent("test@test.com");
         const formData = `name=${name}&email=${email}&percentage=${percentage}&homeemail=${homeemail}`;
 
         const xhr = new XMLHttpRequest();
@@ -60,6 +60,7 @@ class AddRM extends Component{
     }
 
     render(){
+        //add text field fanciness
         return(
             <Card>
                 <CardTitle title="Add Roommate"/>

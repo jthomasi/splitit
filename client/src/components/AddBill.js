@@ -87,6 +87,7 @@ class AddBills extends Component{
                             <div className="col-sm-1"/>
                         </div>
                         {/*due date*/}
+                        {/*change to Date Picker, controlled date input*/}
                         <div className="form-group">
                             <label className="col-sm-3 control-label">Due Date</label>
                             <div className="col-sm-8">

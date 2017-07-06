@@ -6,6 +6,7 @@ const passport = require('passport');
 
 const router = new express.Router();
 
+// ----------------- DASHBOARD ROUTE ------------------ //
 // this is where we will passing data from the login to the dashboard
 router.post('/dashboard', (req, res) => {
   const decodedEmail = decodeURIComponent(req.body.email);
@@ -20,6 +21,8 @@ router.post('/dashboard', (req, res) => {
       }
   });
 });
+
+// --------------------- ADD ROUTES ----------------------//
 
 router.post("/addrm", (req, res) => {
   const decodedEmail = decodeURIComponent(req.body.homeemail);
@@ -44,7 +47,6 @@ router.post("/addrm", (req, res) => {
             }
             // Or send the newdoc to the browser
             else {
-              console.log("Hey it made it through the api/addRM route route and was saved to the db! "+newdoc)
               res.send(newdoc);
             }
         });
@@ -75,11 +77,36 @@ router.post("/addbill", (req, res) => {
             }
             // Or send the newdoc to the browser
             else {
-              console.log("Hey it made it through the api/addbill route and was saved to the db! "+newdoc)
               res.send(newdoc);
             }
         });
       }
+  });
+});
+
+// ------------------------ DELETE ROUTES ---------------------- //
+
+router.post("/deleterm", (req, res) => {
+  // we should store the _id of each roommate as an id value to be passed to this route
+  const id = req.body.id;
+  Roommate.findByIdAndRemove({ "_id": id }, function(err, newdoc) {
+    if (err) {
+        res.send(err);
+    } else {
+        res.send(newdoc);
+    }
+  });
+});
+
+router.post("/deleterm", (req, res) => {
+  // we should store the _id of each roommate as an id value to be passed to this route
+  const id = req.body.id;
+  Bill.findByIdAndRemove({ "_id": id }, function(err, newdoc) {
+    if (err) {
+        res.send(err);
+    } else {
+        res.send(newdoc);
+    }
   });
 });
 

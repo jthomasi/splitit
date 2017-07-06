@@ -119,7 +119,8 @@ class AddRM extends Component{
                             floatingLabelText="Bill %"
                             hintText="ex. 50"
                             max={100}
-                            min={0}/>
+                            min={0}
+                            step="0.01"/>
                         </div>
                         <div className="col-sm-2"/>
                     </div>

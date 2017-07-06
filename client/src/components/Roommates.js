@@ -25,16 +25,12 @@ class Roommates extends Component {
         this.listRoomies = this.listRoomies.bind(this);
         this.showAddRM = this.showAddRM.bind(this);
     }
-    //add case for no roommates when props[] == 0
-    // show %share of bill
 
     //add roommate fields may be retained; to solve
     listRoomies(){
         //show minus sign next to each name with delete db method 
         //check contents of roommates Table
         return this.props.roommates.map((i)=>{
-        // let test = [1,2,3,4,5,6]               
-        // return test.map((i)=>{
             return(
                 <TableRow>
                     <TableRowColumn>{i.name}</TableRowColumn>
@@ -62,7 +58,7 @@ class Roommates extends Component {
         console.log("showAddRM");
         if (this.state.isVisible) {
             return(
-                <AddRM/>
+                <AddRM roommates={this.props.roommates}/>
             );
         } else {
             console.log("no render");
@@ -80,7 +76,7 @@ class Roommates extends Component {
                             badgeContent={this.props.roommates.length}
                             primary={true}
                         >
-                        "Roommmates"
+                        "Roommates"
                         </Badge>
                         } subtitle="manage roommates"/>
                     

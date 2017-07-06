@@ -25,15 +25,11 @@ class Bills extends Component {
         this.listBills = this.listBills.bind(this);
         this.showBillAdd = this.showBillAdd.bind(this);
     }
-    //add case for no bills when props[] == 0
-    //display bill name, bill cost, and bill total
-    
+        
     //addbill fields may be retained; to solve
     listBills(){
         //show minus sign next to each name with delete db method
         return this.props.bills.map((i)=>{
-        // let test = [1,2,3,4,5];
-        // return test.map((i)=>{
             return(
                 <TableRow>
                     <TableRowColumn>{i.name}</TableRowColumn>
@@ -51,12 +47,20 @@ class Bills extends Component {
         console.log("showBillAdd");
         if (this.state.isVisible) {
             return(
-                <AddBill/>
+                <AddBill bills={this.props.bills}/>
             );
         } else {
             console.log("no render");
             return null;
         }
+    }
+
+    totalBill(){
+        let total = 0;
+        this.props.bills.map((i)=>{
+            total += i.cost;
+        })
+        return total;
     }
 
 	render(){
@@ -82,6 +86,10 @@ class Bills extends Component {
                             {this.listBills()}
                         </TableBody>                           
                     </Table>
+                    <Divider/>
+                    <CardText>
+                        Total Bill: {this.totalBill()}
+                    </CardText>
                     <Divider/>
                     <CardActions>
                         <div onClick={this.addBill}>

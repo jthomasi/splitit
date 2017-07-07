@@ -12,7 +12,10 @@ module.exports.connect = (uri) => {
   });
 
   // load models
-  require('./home');
-  require('./bill');
-  require('./roommate');
+  // require('./home');
+  // require('./bill');
+  // require('./roommate');
+  require("./Home");
+  require("./Bill");
+  require("./Roommate");
 };

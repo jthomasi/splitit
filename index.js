@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const config = require('./config');
+// const timer = require('./timer/timer.js');
 
 // connect to the database and load models
 let db = process.env.MONGODB_URI ||  config.dbUri;
@@ -32,6 +33,10 @@ const authRoutes = require('./server/routes/auth');
 const apiRoutes = require('./server/routes/api');
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
+
+
+//timer
+// setTimeout(timer, 86400000);
 
 let PORT = process.env.PORT || 3000;
 

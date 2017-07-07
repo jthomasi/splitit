@@ -45,7 +45,7 @@ module.exports = new PassportLocalStrategy({
       };
 
       // create a token string
-      const token = jwt.sign(payload, config.jwtSecret);
+      const token = jwt.sign(payload, process.env.MONGODB_URI || config.jwtSecret);
       const data = {
         name: home.name
       };

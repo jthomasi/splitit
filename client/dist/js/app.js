@@ -35238,11 +35238,11 @@
 
 	var _DashboardPage2 = _interopRequireDefault(_DashboardPage);
 
-	var _LoginPage = __webpack_require__(527);
+	var _LoginPage = __webpack_require__(524);
 
 	var _LoginPage2 = _interopRequireDefault(_LoginPage);
 
-	var _SignUpPage = __webpack_require__(529);
+	var _SignUpPage = __webpack_require__(526);
 
 	var _SignUpPage2 = _interopRequireDefault(_SignUpPage);
 
@@ -41145,7 +41145,7 @@
 
 	var _Bills2 = _interopRequireDefault(_Bills);
 
-	var _Roommates = __webpack_require__(525);
+	var _Roommates = __webpack_require__(522);
 
 	var _Roommates2 = _interopRequireDefault(_Roommates);
 
@@ -41253,13 +41253,13 @@
 
 	var _Badge2 = _interopRequireDefault(_Badge);
 
-	var _Table = __webpack_require__(465);
+	var _Table = __webpack_require__(462);
 
-	var _RaisedButton = __webpack_require__(485);
+	var _RaisedButton = __webpack_require__(482);
 
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 
-	var _Divider = __webpack_require__(487);
+	var _Divider = __webpack_require__(484);
 
 	var _Divider2 = _interopRequireDefault(_Divider);
 
@@ -41267,7 +41267,7 @@
 
 	var _Auth2 = _interopRequireDefault(_Auth);
 
-	var _AddBill = __webpack_require__(489);
+	var _AddBill = __webpack_require__(486);
 
 	var _AddBill2 = _interopRequireDefault(_AddBill);
 
@@ -41682,10 +41682,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 462 */,
-/* 463 */,
-/* 464 */,
-/* 465 */
+/* 462 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41695,31 +41692,31 @@
 	});
 	exports.default = exports.TableRowColumn = exports.TableRow = exports.TableHeaderColumn = exports.TableHeader = exports.TableFooter = exports.TableBody = exports.Table = undefined;
 
-	var _Table2 = __webpack_require__(466);
+	var _Table2 = __webpack_require__(463);
 
 	var _Table3 = _interopRequireDefault(_Table2);
 
-	var _TableBody2 = __webpack_require__(467);
+	var _TableBody2 = __webpack_require__(464);
 
 	var _TableBody3 = _interopRequireDefault(_TableBody2);
 
-	var _TableFooter2 = __webpack_require__(481);
+	var _TableFooter2 = __webpack_require__(478);
 
 	var _TableFooter3 = _interopRequireDefault(_TableFooter2);
 
-	var _TableHeader2 = __webpack_require__(482);
+	var _TableHeader2 = __webpack_require__(479);
 
 	var _TableHeader3 = _interopRequireDefault(_TableHeader2);
 
-	var _TableHeaderColumn2 = __webpack_require__(483);
+	var _TableHeaderColumn2 = __webpack_require__(480);
 
 	var _TableHeaderColumn3 = _interopRequireDefault(_TableHeaderColumn2);
 
-	var _TableRow2 = __webpack_require__(484);
+	var _TableRow2 = __webpack_require__(481);
 
 	var _TableRow3 = _interopRequireDefault(_TableRow2);
 
-	var _TableRowColumn2 = __webpack_require__(479);
+	var _TableRowColumn2 = __webpack_require__(476);
 
 	var _TableRowColumn3 = _interopRequireDefault(_TableRowColumn2);
 
@@ -41735,7 +41732,7 @@
 	exports.default = _Table3.default;
 
 /***/ }),
-/* 466 */
+/* 463 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -42102,7 +42099,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 467 */
+/* 464 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -42111,7 +42108,7 @@
 	  value: true
 	});
 
-	var _getIterator2 = __webpack_require__(468);
+	var _getIterator2 = __webpack_require__(465);
 
 	var _getIterator3 = _interopRequireDefault(_getIterator2);
 
@@ -42155,15 +42152,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Checkbox = __webpack_require__(471);
+	var _Checkbox = __webpack_require__(468);
 
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
-	var _TableRowColumn = __webpack_require__(479);
+	var _TableRowColumn = __webpack_require__(476);
 
 	var _TableRowColumn2 = _interopRequireDefault(_TableRowColumn);
 
-	var _ClickAwayListener = __webpack_require__(480);
+	var _ClickAwayListener = __webpack_require__(477);
 
 	var _ClickAwayListener2 = _interopRequireDefault(_ClickAwayListener);
 
@@ -42634,21 +42631,21 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 468 */
+/* 465 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(469), __esModule: true };
+	module.exports = { "default": __webpack_require__(466), __esModule: true };
 
 /***/ }),
-/* 469 */
+/* 466 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(256);
 	__webpack_require__(194);
-	module.exports = __webpack_require__(470);
+	module.exports = __webpack_require__(467);
 
 /***/ }),
-/* 470 */
+/* 467 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var anObject = __webpack_require__(207)
@@ -42660,7 +42657,7 @@
 	};
 
 /***/ }),
-/* 471 */
+/* 468 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42670,7 +42667,7 @@
 	});
 	exports.default = undefined;
 
-	var _Checkbox = __webpack_require__(472);
+	var _Checkbox = __webpack_require__(469);
 
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
@@ -42679,7 +42676,7 @@
 	exports.default = _Checkbox2.default;
 
 /***/ }),
-/* 472 */
+/* 469 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -42724,7 +42721,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _EnhancedSwitch = __webpack_require__(473);
+	var _EnhancedSwitch = __webpack_require__(470);
 
 	var _EnhancedSwitch2 = _interopRequireDefault(_EnhancedSwitch);
 
@@ -42732,11 +42729,11 @@
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _checkBoxOutlineBlank = __webpack_require__(477);
+	var _checkBoxOutlineBlank = __webpack_require__(474);
 
 	var _checkBoxOutlineBlank2 = _interopRequireDefault(_checkBoxOutlineBlank);
 
-	var _checkBox = __webpack_require__(478);
+	var _checkBox = __webpack_require__(475);
 
 	var _checkBox2 = _interopRequireDefault(_checkBox);
 
@@ -42975,7 +42972,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 473 */
+/* 470 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -43020,7 +43017,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactEventListener = __webpack_require__(474);
+	var _reactEventListener = __webpack_require__(471);
 
 	var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
 
@@ -43432,7 +43429,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 474 */
+/* 471 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -43495,7 +43492,7 @@
 
 	var _warning2 = _interopRequireDefault(_warning);
 
-	var _supports = __webpack_require__(475);
+	var _supports = __webpack_require__(472);
 
 	var supports = _interopRequireWildcard(_supports);
 
@@ -43662,7 +43659,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 475 */
+/* 472 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43672,7 +43669,7 @@
 	});
 	exports.passiveOption = exports.detachEvent = exports.attachEvent = exports.removeEventListener = exports.addEventListener = exports.canUseDOM = undefined;
 
-	var _defineProperty = __webpack_require__(476);
+	var _defineProperty = __webpack_require__(473);
 
 	var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -43715,7 +43712,7 @@
 	}();
 
 /***/ }),
-/* 476 */
+/* 473 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -43739,7 +43736,7 @@
 	}
 
 /***/ }),
-/* 477 */
+/* 474 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43776,7 +43773,7 @@
 	exports.default = ToggleCheckBoxOutlineBlank;
 
 /***/ }),
-/* 478 */
+/* 475 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43813,7 +43810,7 @@
 	exports.default = ToggleCheckBox;
 
 /***/ }),
-/* 479 */
+/* 476 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -43998,7 +43995,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 480 */
+/* 477 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -44129,7 +44126,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 481 */
+/* 478 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -44178,7 +44175,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _TableRowColumn = __webpack_require__(479);
+	var _TableRowColumn = __webpack_require__(476);
 
 	var _TableRowColumn2 = _interopRequireDefault(_TableRowColumn);
 
@@ -44285,7 +44282,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 482 */
+/* 479 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -44322,11 +44319,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Checkbox = __webpack_require__(471);
+	var _Checkbox = __webpack_require__(468);
 
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
-	var _TableHeaderColumn = __webpack_require__(483);
+	var _TableHeaderColumn = __webpack_require__(480);
 
 	var _TableHeaderColumn2 = _interopRequireDefault(_TableHeaderColumn);
 
@@ -44539,7 +44536,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 483 */
+/* 480 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -44743,7 +44740,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 484 */
+/* 481 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -45023,7 +45020,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 485 */
+/* 482 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45033,7 +45030,7 @@
 	});
 	exports.default = undefined;
 
-	var _RaisedButton = __webpack_require__(486);
+	var _RaisedButton = __webpack_require__(483);
 
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 
@@ -45042,7 +45039,7 @@
 	exports.default = _RaisedButton2.default;
 
 /***/ }),
-/* 486 */
+/* 483 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -45522,7 +45519,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 487 */
+/* 484 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45532,7 +45529,7 @@
 	});
 	exports.default = undefined;
 
-	var _Divider = __webpack_require__(488);
+	var _Divider = __webpack_require__(485);
 
 	var _Divider2 = _interopRequireDefault(_Divider);
 
@@ -45541,7 +45538,7 @@
 	exports.default = _Divider2.default;
 
 /***/ }),
-/* 488 */
+/* 485 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -45616,7 +45613,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 489 */
+/* 486 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45633,19 +45630,19 @@
 
 	var _Card = __webpack_require__(400);
 
-	var _DatePicker = __webpack_require__(490);
+	var _DatePicker = __webpack_require__(487);
 
 	var _DatePicker2 = _interopRequireDefault(_DatePicker);
 
-	var _TextField = __webpack_require__(519);
+	var _TextField = __webpack_require__(516);
 
 	var _TextField2 = _interopRequireDefault(_TextField);
 
-	var _RaisedButton = __webpack_require__(485);
+	var _RaisedButton = __webpack_require__(482);
 
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 
-	var _Divider = __webpack_require__(487);
+	var _Divider = __webpack_require__(484);
 
 	var _Divider2 = _interopRequireDefault(_Divider);
 
@@ -45680,18 +45677,7 @@
 	        return _this;
 	    }
 
-	    //will receive bills props from Bills
-
-
 	    _createClass(AddBills, [{
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {
-	            console.log('next props is {nextProps.bills}');
-	            if (nextProps.bills !== this.state.bills) {
-	                this.setState({ bills: nextProps.bills });
-	            }
-	        }
-	    }, {
 	        key: 'handleSubmit',
 	        value: function handleSubmit(event) {
 	            var _this2 = this;
@@ -45784,7 +45770,8 @@
 	                                id: 'billCost',
 	                                floatingLabelText: 'Bill Cost',
 	                                hintText: 'ex. 500',
-	                                min: 0 })
+	                                min: 0,
+	                                step: '0.01' })
 	                        ),
 	                        _react2.default.createElement('div', { className: 'col-sm-2' })
 	                    ),
@@ -45812,7 +45799,9 @@
 	                    _react2.default.createElement(
 	                        'div',
 	                        { onClick: this.handleSubmit },
-	                        _react2.default.createElement(_RaisedButton2.default, { label: 'Add' })
+	                        _react2.default.createElement(_RaisedButton2.default, {
+	                            disabled: this.state.billCost < 0 || !this.state.billName || !this.state.dueDate,
+	                            label: 'Add' })
 	                    )
 	                )
 	            );
@@ -45825,7 +45814,7 @@
 	exports.default = AddBills;
 
 /***/ }),
-/* 490 */
+/* 487 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45835,7 +45824,7 @@
 	});
 	exports.default = undefined;
 
-	var _DatePicker = __webpack_require__(491);
+	var _DatePicker = __webpack_require__(488);
 
 	var _DatePicker2 = _interopRequireDefault(_DatePicker);
 
@@ -45844,7 +45833,7 @@
 	exports.default = _DatePicker2.default;
 
 /***/ }),
-/* 491 */
+/* 488 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -45889,13 +45878,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _dateUtils = __webpack_require__(492);
+	var _dateUtils = __webpack_require__(489);
 
-	var _DatePickerDialog = __webpack_require__(493);
+	var _DatePickerDialog = __webpack_require__(490);
 
 	var _DatePickerDialog2 = _interopRequireDefault(_DatePickerDialog);
 
-	var _TextField = __webpack_require__(519);
+	var _TextField = __webpack_require__(516);
 
 	var _TextField2 = _interopRequireDefault(_TextField);
 
@@ -46238,7 +46227,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 492 */
+/* 489 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -46424,7 +46413,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 493 */
+/* 490 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -46469,7 +46458,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactEventListener = __webpack_require__(474);
+	var _reactEventListener = __webpack_require__(471);
 
 	var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
 
@@ -46477,23 +46466,23 @@
 
 	var _keycode2 = _interopRequireDefault(_keycode);
 
-	var _Calendar = __webpack_require__(494);
+	var _Calendar = __webpack_require__(491);
 
 	var _Calendar2 = _interopRequireDefault(_Calendar);
 
-	var _Dialog = __webpack_require__(509);
+	var _Dialog = __webpack_require__(506);
 
 	var _Dialog2 = _interopRequireDefault(_Dialog);
 
-	var _Popover = __webpack_require__(514);
+	var _Popover = __webpack_require__(511);
 
 	var _Popover2 = _interopRequireDefault(_Popover);
 
-	var _PopoverAnimationVertical = __webpack_require__(518);
+	var _PopoverAnimationVertical = __webpack_require__(515);
 
 	var _PopoverAnimationVertical2 = _interopRequireDefault(_PopoverAnimationVertical);
 
-	var _dateUtils = __webpack_require__(492);
+	var _dateUtils = __webpack_require__(489);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46676,7 +46665,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 494 */
+/* 491 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -46713,7 +46702,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactEventListener = __webpack_require__(474);
+	var _reactEventListener = __webpack_require__(471);
 
 	var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
 
@@ -46725,31 +46714,31 @@
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _CalendarActionButtons = __webpack_require__(495);
+	var _CalendarActionButtons = __webpack_require__(492);
 
 	var _CalendarActionButtons2 = _interopRequireDefault(_CalendarActionButtons);
 
-	var _CalendarMonth = __webpack_require__(499);
+	var _CalendarMonth = __webpack_require__(496);
 
 	var _CalendarMonth2 = _interopRequireDefault(_CalendarMonth);
 
-	var _CalendarYear = __webpack_require__(501);
+	var _CalendarYear = __webpack_require__(498);
 
 	var _CalendarYear2 = _interopRequireDefault(_CalendarYear);
 
-	var _CalendarToolbar = __webpack_require__(503);
+	var _CalendarToolbar = __webpack_require__(500);
 
 	var _CalendarToolbar2 = _interopRequireDefault(_CalendarToolbar);
 
-	var _DateDisplay = __webpack_require__(508);
+	var _DateDisplay = __webpack_require__(505);
 
 	var _DateDisplay2 = _interopRequireDefault(_DateDisplay);
 
-	var _SlideIn = __webpack_require__(506);
+	var _SlideIn = __webpack_require__(503);
 
 	var _SlideIn2 = _interopRequireDefault(_SlideIn);
 
-	var _dateUtils = __webpack_require__(492);
+	var _dateUtils = __webpack_require__(489);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -47130,7 +47119,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 495 */
+/* 492 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -47163,7 +47152,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _FlatButton = __webpack_require__(496);
+	var _FlatButton = __webpack_require__(493);
 
 	var _FlatButton2 = _interopRequireDefault(_FlatButton);
 
@@ -47236,7 +47225,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 496 */
+/* 493 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47246,7 +47235,7 @@
 	});
 	exports.default = undefined;
 
-	var _FlatButton = __webpack_require__(497);
+	var _FlatButton = __webpack_require__(494);
 
 	var _FlatButton2 = _interopRequireDefault(_FlatButton);
 
@@ -47255,7 +47244,7 @@
 	exports.default = _FlatButton2.default;
 
 /***/ }),
-/* 497 */
+/* 494 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -47312,7 +47301,7 @@
 
 	var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
 
-	var _FlatButtonLabel = __webpack_require__(498);
+	var _FlatButtonLabel = __webpack_require__(495);
 
 	var _FlatButtonLabel2 = _interopRequireDefault(_FlatButtonLabel);
 
@@ -47585,7 +47574,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 498 */
+/* 495 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -47677,7 +47666,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 499 */
+/* 496 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -47710,9 +47699,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _dateUtils = __webpack_require__(492);
+	var _dateUtils = __webpack_require__(489);
 
-	var _DayButton = __webpack_require__(500);
+	var _DayButton = __webpack_require__(497);
 
 	var _DayButton2 = _interopRequireDefault(_DayButton);
 
@@ -47849,7 +47838,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 500 */
+/* 497 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -47894,7 +47883,7 @@
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _dateUtils = __webpack_require__(492);
+	var _dateUtils = __webpack_require__(489);
 
 	var _EnhancedButton = __webpack_require__(430);
 
@@ -48050,7 +48039,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 501 */
+/* 498 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -48091,11 +48080,11 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _YearButton = __webpack_require__(502);
+	var _YearButton = __webpack_require__(499);
 
 	var _YearButton2 = _interopRequireDefault(_YearButton);
 
-	var _dateUtils = __webpack_require__(492);
+	var _dateUtils = __webpack_require__(489);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -48245,7 +48234,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 502 */
+/* 499 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -48405,7 +48394,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 503 */
+/* 500 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -48442,15 +48431,15 @@
 
 	var _IconButton2 = _interopRequireDefault(_IconButton);
 
-	var _chevronLeft = __webpack_require__(504);
+	var _chevronLeft = __webpack_require__(501);
 
 	var _chevronLeft2 = _interopRequireDefault(_chevronLeft);
 
-	var _chevronRight = __webpack_require__(505);
+	var _chevronRight = __webpack_require__(502);
 
 	var _chevronRight2 = _interopRequireDefault(_chevronRight);
 
-	var _SlideIn = __webpack_require__(506);
+	var _SlideIn = __webpack_require__(503);
 
 	var _SlideIn2 = _interopRequireDefault(_SlideIn);
 
@@ -48579,7 +48568,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 504 */
+/* 501 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48616,7 +48605,7 @@
 	exports.default = NavigationChevronLeft;
 
 /***/ }),
-/* 505 */
+/* 502 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48653,7 +48642,7 @@
 	exports.default = NavigationChevronRight;
 
 /***/ }),
-/* 506 */
+/* 503 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -48702,7 +48691,7 @@
 
 	var _reactAddonsTransitionGroup2 = _interopRequireDefault(_reactAddonsTransitionGroup);
 
-	var _SlideInChild = __webpack_require__(507);
+	var _SlideInChild = __webpack_require__(504);
 
 	var _SlideInChild2 = _interopRequireDefault(_SlideInChild);
 
@@ -48793,7 +48782,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 507 */
+/* 504 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -48947,7 +48936,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 508 */
+/* 505 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -48992,7 +48981,7 @@
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _SlideIn = __webpack_require__(506);
+	var _SlideIn = __webpack_require__(503);
 
 	var _SlideIn2 = _interopRequireDefault(_SlideIn);
 
@@ -49190,7 +49179,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 509 */
+/* 506 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49200,7 +49189,7 @@
 	});
 	exports.default = undefined;
 
-	var _Dialog = __webpack_require__(510);
+	var _Dialog = __webpack_require__(507);
 
 	var _Dialog2 = _interopRequireDefault(_Dialog);
 
@@ -49209,7 +49198,7 @@
 	exports.default = _Dialog2.default;
 
 /***/ }),
-/* 510 */
+/* 507 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -49258,7 +49247,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _reactEventListener = __webpack_require__(474);
+	var _reactEventListener = __webpack_require__(471);
 
 	var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
 
@@ -49270,11 +49259,11 @@
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _Overlay = __webpack_require__(511);
+	var _Overlay = __webpack_require__(508);
 
 	var _Overlay2 = _interopRequireDefault(_Overlay);
 
-	var _RenderToLayer = __webpack_require__(513);
+	var _RenderToLayer = __webpack_require__(510);
 
 	var _RenderToLayer2 = _interopRequireDefault(_RenderToLayer);
 
@@ -49802,7 +49791,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 511 */
+/* 508 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -49851,7 +49840,7 @@
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _AutoLockScrolling = __webpack_require__(512);
+	var _AutoLockScrolling = __webpack_require__(509);
 
 	var _AutoLockScrolling2 = _interopRequireDefault(_AutoLockScrolling);
 
@@ -49948,7 +49937,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 512 */
+/* 509 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -50074,7 +50063,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 513 */
+/* 510 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -50259,7 +50248,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 514 */
+/* 511 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -50308,11 +50297,11 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _reactEventListener = __webpack_require__(474);
+	var _reactEventListener = __webpack_require__(471);
 
 	var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
 
-	var _RenderToLayer = __webpack_require__(513);
+	var _RenderToLayer = __webpack_require__(510);
 
 	var _RenderToLayer2 = _interopRequireDefault(_RenderToLayer);
 
@@ -50324,15 +50313,15 @@
 
 	var _Paper2 = _interopRequireDefault(_Paper);
 
-	var _lodash = __webpack_require__(515);
+	var _lodash = __webpack_require__(512);
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
-	var _PopoverAnimationDefault = __webpack_require__(516);
+	var _PopoverAnimationDefault = __webpack_require__(513);
 
 	var _PopoverAnimationDefault2 = _interopRequireDefault(_PopoverAnimationDefault);
 
-	var _iOSHelpers = __webpack_require__(517);
+	var _iOSHelpers = __webpack_require__(514);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -50773,7 +50762,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 515 */
+/* 512 */
 /***/ (function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -51219,7 +51208,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 516 */
+/* 513 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -51393,7 +51382,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 517 */
+/* 514 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -51425,7 +51414,7 @@
 	};
 
 /***/ }),
-/* 518 */
+/* 515 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -51574,7 +51563,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 519 */
+/* 516 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51584,7 +51573,7 @@
 	});
 	exports.default = undefined;
 
-	var _TextField = __webpack_require__(520);
+	var _TextField = __webpack_require__(517);
 
 	var _TextField2 = _interopRequireDefault(_TextField);
 
@@ -51593,7 +51582,7 @@
 	exports.default = _TextField2.default;
 
 /***/ }),
-/* 520 */
+/* 517 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -51650,19 +51639,19 @@
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _EnhancedTextarea = __webpack_require__(521);
+	var _EnhancedTextarea = __webpack_require__(518);
 
 	var _EnhancedTextarea2 = _interopRequireDefault(_EnhancedTextarea);
 
-	var _TextFieldHint = __webpack_require__(522);
+	var _TextFieldHint = __webpack_require__(519);
 
 	var _TextFieldHint2 = _interopRequireDefault(_TextFieldHint);
 
-	var _TextFieldLabel = __webpack_require__(523);
+	var _TextFieldLabel = __webpack_require__(520);
 
 	var _TextFieldLabel2 = _interopRequireDefault(_TextFieldLabel);
 
-	var _TextFieldUnderline = __webpack_require__(524);
+	var _TextFieldUnderline = __webpack_require__(521);
 
 	var _TextFieldUnderline2 = _interopRequireDefault(_TextFieldUnderline);
 
@@ -52174,7 +52163,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 521 */
+/* 518 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -52219,7 +52208,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactEventListener = __webpack_require__(474);
+	var _reactEventListener = __webpack_require__(471);
 
 	var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
 
@@ -52420,7 +52409,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 522 */
+/* 519 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -52502,7 +52491,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 523 */
+/* 520 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -52621,7 +52610,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 524 */
+/* 521 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -52759,7 +52748,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 525 */
+/* 522 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -52780,13 +52769,13 @@
 
 	var _Badge2 = _interopRequireDefault(_Badge);
 
-	var _Table = __webpack_require__(465);
+	var _Table = __webpack_require__(462);
 
-	var _RaisedButton = __webpack_require__(485);
+	var _RaisedButton = __webpack_require__(482);
 
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 
-	var _Divider = __webpack_require__(487);
+	var _Divider = __webpack_require__(484);
 
 	var _Divider2 = _interopRequireDefault(_Divider);
 
@@ -52794,7 +52783,7 @@
 
 	var _Auth2 = _interopRequireDefault(_Auth);
 
-	var _AddRM = __webpack_require__(526);
+	var _AddRM = __webpack_require__(523);
 
 	var _AddRM2 = _interopRequireDefault(_AddRM);
 
@@ -52824,6 +52813,7 @@
 	        _this.showAddRM = _this.showAddRM.bind(_this);
 	        _this.onRowSelection = _this.onRowSelection.bind(_this);
 	        _this.deleteIndex = _this.deleteIndex.bind(_this);
+	        _this.totalPercent = _this.totalPercent.bind(_this);
 	        return _this;
 	    }
 
@@ -52862,11 +52852,22 @@
 	            this.setState({ isVisible: !this.state.isVisible });
 	        }
 	    }, {
+	        key: "totalPercent",
+	        value: function totalPercent() {
+	            var total = 0;
+
+	            this.props.roommates.map(function (i) {
+	                total += i.percentage;
+	            });
+	            console.log("total percent: " + total);
+	            return total;
+	        }
+	    }, {
 	        key: "showAddRM",
 	        value: function showAddRM() {
 	            console.log("showAddRM");
 	            if (this.state.isVisible) {
-	                return _react2.default.createElement(_AddRM2.default, null);
+	                return _react2.default.createElement(_AddRM2.default, { totalPercent: this.totalPercent });
 	            } else {
 	                console.log("no render");
 	                return null;
@@ -53006,7 +53007,7 @@
 	exports.default = Roommates;
 
 /***/ }),
-/* 526 */
+/* 523 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53023,15 +53024,15 @@
 
 	var _Card = __webpack_require__(400);
 
-	var _TextField = __webpack_require__(519);
+	var _TextField = __webpack_require__(516);
 
 	var _TextField2 = _interopRequireDefault(_TextField);
 
-	var _RaisedButton = __webpack_require__(485);
+	var _RaisedButton = __webpack_require__(482);
 
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 
-	var _Divider = __webpack_require__(487);
+	var _Divider = __webpack_require__(484);
 
 	var _Divider2 = _interopRequireDefault(_Divider);
 
@@ -53057,27 +53058,16 @@
 
 	        _this.state = {
 	            roommates: "",
-	            name: "",
-	            email: "",
-	            percentage: 0
+	            roomName: "",
+	            roomEmail: "",
+	            billPercent: 0
 	        };
 	        _this.handleChange = _this.handleChange.bind(_this);
 	        _this.handleSubmit = _this.handleSubmit.bind(_this);
 	        return _this;
 	    }
 
-	    //will receive roommates props from Roommates
-
-
 	    _createClass(AddRM, [{
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {
-	            console.log('next props is {nextProps.roommates}');
-	            if (nextProps.roommates !== this.state.roommates) {
-	                this.setState({ roommates: nextProps.roommates });
-	            }
-	        }
-	    }, {
 	        key: 'handleSubmit',
 	        value: function handleSubmit(event) {
 	            var _this2 = this;
@@ -53125,9 +53115,9 @@
 	        key: 'handleChange',
 	        value: function handleChange(event) {
 	            console.log("roommate value change");
-
+	            console.log(event.target);
 	            var newState = {};
-	            //round bill% to nearest 0.1
+
 	            newState[event.target.id] = event.target.value;
 	            this.setState(newState);
 	        }
@@ -53189,7 +53179,7 @@
 	                                    id: 'billPercent',
 	                                    floatingLabelText: 'Bill %',
 	                                    hintText: 'ex. 50',
-	                                    max: 100,
+	                                    max: 100 - this.props.totalPercent,
 	                                    min: 0,
 	                                    step: '0.01' })
 	                            ),
@@ -53204,7 +53194,8 @@
 	                    _react2.default.createElement(
 	                        'div',
 	                        { onClick: this.handleSubmit },
-	                        _react2.default.createElement(_RaisedButton2.default, { label: 'Add' })
+	                        _react2.default.createElement(_RaisedButton2.default, { disabled: !this.state.roomName || !this.state.roomEmail || this.state.billPercent < 0,
+	                            label: 'Add' })
 	                    )
 	                )
 	            );
@@ -53217,7 +53208,7 @@
 	exports.default = AddRM;
 
 /***/ }),
-/* 527 */
+/* 524 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53236,7 +53227,7 @@
 
 	var _Auth2 = _interopRequireDefault(_Auth);
 
-	var _LoginForm = __webpack_require__(528);
+	var _LoginForm = __webpack_require__(525);
 
 	var _LoginForm2 = _interopRequireDefault(_LoginForm);
 
@@ -53381,7 +53372,7 @@
 	exports.default = LoginPage;
 
 /***/ }),
-/* 528 */
+/* 525 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53398,11 +53389,11 @@
 
 	var _Card = __webpack_require__(400);
 
-	var _RaisedButton = __webpack_require__(485);
+	var _RaisedButton = __webpack_require__(482);
 
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 
-	var _TextField = __webpack_require__(519);
+	var _TextField = __webpack_require__(516);
 
 	var _TextField2 = _interopRequireDefault(_TextField);
 
@@ -53489,7 +53480,7 @@
 	exports.default = LoginForm;
 
 /***/ }),
-/* 529 */
+/* 526 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53504,7 +53495,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _SignUpForm = __webpack_require__(530);
+	var _SignUpForm = __webpack_require__(527);
 
 	var _SignUpForm2 = _interopRequireDefault(_SignUpForm);
 
@@ -53640,7 +53631,7 @@
 	exports.default = SignUpPage;
 
 /***/ }),
-/* 530 */
+/* 527 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53657,11 +53648,11 @@
 
 	var _Card = __webpack_require__(400);
 
-	var _RaisedButton = __webpack_require__(485);
+	var _RaisedButton = __webpack_require__(482);
 
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 
-	var _TextField = __webpack_require__(519);
+	var _TextField = __webpack_require__(516);
 
 	var _TextField2 = _interopRequireDefault(_TextField);
 

@@ -33,7 +33,6 @@ class DashboardPage extends React.Component {
     xhr.responseType = 'json';
     xhr.addEventListener('load', () => {
       if (xhr.status === 200) {
-        console.log(xhr.response);
         this.setState({
           roommates: xhr.response.roommates,
           bills: xhr.response.bills

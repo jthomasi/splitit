@@ -19,14 +19,6 @@ class AddBills extends Component{
         this.handleSubmit = this.handleSubmit.bind(this); 
     }
 
-    //will receive bills props from Bills
-    componentWillReceiveProps(nextProps) {
-        console.log(`next props is {nextProps.bills}`);
-        if(nextProps.bills !== this.state.bills){
-            this.setState({bills: nextProps.bills});
-        }
-    }
-
     handleSubmit(event){
         event.preventDefault();
 

@@ -52867,7 +52867,7 @@
 	        value: function showAddRM() {
 	            console.log("showAddRM");
 	            if (this.state.isVisible) {
-	                return _react2.default.createElement(_AddRM2.default, { totalPercent: this.totalPercent });
+	                return _react2.default.createElement(_AddRM2.default, { totalPercent: this.totalPercent() });
 	            } else {
 	                console.log("no render");
 	                return null;
@@ -53181,7 +53181,7 @@
 	                                    hintText: 'ex. 50',
 	                                    max: 100 - this.props.totalPercent,
 	                                    min: 0,
-	                                    step: '0.01' })
+	                                    step: '1' })
 	                            ),
 	                            _react2.default.createElement('div', { className: 'col-sm-2' })
 	                        )

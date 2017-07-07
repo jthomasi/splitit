@@ -28,6 +28,7 @@ class Roommates extends Component {
         this.showAddRM = this.showAddRM.bind(this);
         this.onRowSelection = this.onRowSelection.bind(this);
         this.deleteIndex = this.deleteIndex.bind(this);
+        this.totalPercent = this.totalPercent.bind(this);
     }
 
     listRoomies(){
@@ -47,11 +48,21 @@ class Roommates extends Component {
         this.setState({isVisible: !this.state.isVisible});
     }
 
+    totalPercent(){
+        let total = 0;
+
+        this.props.roommates.map((i)=>{
+            total += i.percentage;
+        });
+        console.log(`total percent: ${total}`);
+        return total;
+    }
+
     showAddRM() {
         console.log("showAddRM");
         if (this.state.isVisible) {
             return(
-                <AddRM/>
+                <AddRM totalPercent={this.totalPercent()}/>
             );
         } else {
             console.log("no render");

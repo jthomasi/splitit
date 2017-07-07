@@ -4,7 +4,7 @@
   "description": "Authentication in React Applications",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --use-strict index.js",
+    "start": "node index.js",
     "bundle": "webpack"
   },
   "repository": {

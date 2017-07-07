@@ -5,7 +5,9 @@ const config = require('./config');
 // const timer = require('./timer/timer.js');
 
 // connect to the database and load models
-require('./server/models').connect(config.dbUri);
+let db = process.env.MONGODB_URI ||  config.dbUri;
+
+require('./server/models').connect(db);
 
 const app = express();
 // tell the app to look for static files in these directories
@@ -32,10 +34,13 @@ const apiRoutes = require('./server/routes/api');
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
 
+
 //timer
 // setTimeout(timer, 86400000);
 
+let PORT = process.env.PORT || 3000;
+
 // start the server
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('Server is running on http://localhost:3000 or http://127.0.0.1:3000');
 });

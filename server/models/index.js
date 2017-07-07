@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
 module.exports.connect = (uri) => {
-  mongoose.connect(uri);
+  let database = process.env.MONGODB_URI || uri;
+
+  mongoose.connect(database);
   // plug in the promise library:
   mongoose.Promise = global.Promise;
 

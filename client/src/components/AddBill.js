@@ -19,14 +19,6 @@ class AddBills extends Component{
         this.handleSubmit = this.handleSubmit.bind(this); 
     }
 
-    //will receive bills props from Bills
-    componentWillReceiveProps(nextProps) {
-        console.log(`next props is {nextProps.bills}`);
-        if(nextProps.bills !== this.state.bills){
-            this.setState({bills: nextProps.bills});
-        }
-    }
-
     handleSubmit(event){
         event.preventDefault();
 
@@ -104,7 +96,9 @@ class AddBills extends Component{
                                 onChange={this.handleChange}
                                 id="billCost"
                                 floatingLabelText="Bill Cost"                                
-                                hintText="ex. 500"/>
+                                hintText="ex. 500"
+                                min={0}
+                                step="0.01"/>
                             </div>
                             <div className="col-sm-2"/>
                         </div>

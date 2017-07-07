@@ -30,8 +30,6 @@ class AddRM extends Component{
         const homeemail = encodeURIComponent(Auth.grabEmail());
         const formData = `name=${name}&email=${email}&percentage=${percentage}&homeemail=${homeemail}`;
 
-        console.log("pre-addrm email: "+homeemail);
-
         const xhr = new XMLHttpRequest();
         xhr.open('post', '/api/addrm');
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -45,7 +43,6 @@ class AddRM extends Component{
             // NEED TO RERENDER ROOMMATES
             console.log("roommate submitted");
             // change the current URL to /
-            // this.context.router.replace('/');
             window.location.reload();
             //change entry fields to be empty
             this.setState({roomName: ""});

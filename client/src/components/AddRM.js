@@ -53,7 +53,6 @@ class AddRM extends Component{
             // NEED TO RERENDER ROOMMATES
             console.log("roommate submitted");
             // change the current URL to /
-            // this.context.router.replace('/');
             window.location.reload();
             //change entry fields to be empty
             this.setState({roomName: ""});

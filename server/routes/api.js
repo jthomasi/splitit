@@ -98,7 +98,7 @@ router.post("/deleterm", (req, res) => {
   });
 });
 
-router.post("/deleterm", (req, res) => {
+router.post("/deletebill", (req, res) => {
   // we should store the _id of each roommate as an id value to be passed to this route
   const id = req.body.id;
   Bill.findByIdAndRemove({ "_id": id }, function(err, newdoc) {

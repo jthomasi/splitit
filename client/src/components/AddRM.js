@@ -10,20 +10,12 @@ class AddRM extends Component{
         super(props);
         this.state = {
             roommates: "",
-            name: "",
-            email: "",
-            percentage: 0
+            roomName: "",
+            roomEmail: "",
+            billPercent: 0
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);  
-    }
-
-    //will receive roommates props from Roommates
-    componentWillReceiveProps(nextProps) {
-        console.log(`next props is {nextProps.roommates}`);
-        if(nextProps.roommates !== this.state.roommates){
-            this.setState({roommates: nextProps.roommates});
-        }
     }
 
     handleSubmit(event){
@@ -69,9 +61,9 @@ class AddRM extends Component{
 
     handleChange(event){
         console.log("roommate value change");
-
+         console.log(event.target);
         let newState = {};
-        //round bill% to nearest 0.1
+        
         newState[event.target.id] = event.target.value;
         this.setState(newState);
     }
@@ -118,9 +110,9 @@ class AddRM extends Component{
                             id="billPercent"
                             floatingLabelText="Bill %"
                             hintText="ex. 50"
-                            max={100}
+                            max={100 - this.props.totalPercent}
                             min={0}
-                            step="0.01"/>
+                            step="1"/>
                         </div>
                         <div className="col-sm-2"/>
                     </div>
@@ -129,7 +121,11 @@ class AddRM extends Component{
                 <Divider/>
                 <CardActions>
                     <div onClick={this.handleSubmit}>
-                        <RaisedButton label="Add"/>
+                        <RaisedButton disabled={
+                            !this.state.roomName
+                            || !this.state.roomEmail
+                            || this.state.billPercent < 0}
+                            label="Add"/>
                     </div>
                 </CardActions>
             </Card>

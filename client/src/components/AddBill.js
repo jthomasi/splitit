@@ -119,7 +119,11 @@ class AddBills extends Component{
                 <Divider/>
                 <CardActions>
                     <div onClick={this.handleSubmit}>
-                        <RaisedButton label="Add"/>
+                        <RaisedButton
+                            disabled={this.state.billCost < 0
+                                || !this.state.billName
+                                || !this.state.dueDate}
+                            label="Add"/>
                     </div>
                 </CardActions>
             </Card>            

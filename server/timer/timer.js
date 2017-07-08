@@ -90,16 +90,18 @@ function timer() {
     }
 
     function sendEmail(email, text) {
+        const heroEM = process.env.SPLITIT_EMAIL;
+        const heroPW = process.env.SPLITIT_PW;
 
         var transporter = nodemailer.createTransport({
             service: 'Gmail',
             auth: {
-                user: 'thesplititco@gmail.com', // Your email id
-                pass: 'Heythere01' // Your password
+                user: heroEM, // Your email id
+                pass: heroPW // Your password
             }
         });
         var mailOptions = {
-            from: 'thesplititco@gmail.com', // sender address
+            from: heroEM, // sender address
             to: email, // list of receivers
             subject: 'Splitit Bill Alert!', // Subject line
             text: text

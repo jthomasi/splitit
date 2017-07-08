@@ -34,7 +34,7 @@ app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
 
 // bill dates check timer
-setInterval(timer, 10000);
+setInterval(timer, 86400000);
 
 // PORT
 let PORT = process.env.PORT || 3000;

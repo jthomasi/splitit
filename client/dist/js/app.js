@@ -41324,11 +41324,9 @@
 	    }, {
 	        key: "showBillAdd",
 	        value: function showBillAdd() {
-	            console.log("showBillAdd");
 	            if (this.state.isVisible) {
 	                return _react2.default.createElement(_AddBill2.default, null);
 	            } else {
-	                console.log("no render");
 	                return null;
 	            }
 	        }
@@ -52839,7 +52837,6 @@
 	    }, {
 	        key: "addRoomies",
 	        value: function addRoomies() {
-	            console.log("adding");
 	            this.setState({ isVisible: !this.state.isVisible });
 	        }
 	    }, {
@@ -52850,17 +52847,14 @@
 	            this.props.roommates.map(function (i) {
 	                total += i.percentage;
 	            });
-	            console.log("total percent: " + total);
 	            return total;
 	        }
 	    }, {
 	        key: "showAddRM",
 	        value: function showAddRM() {
-	            console.log("showAddRM");
 	            if (this.state.isVisible) {
 	                return _react2.default.createElement(_AddRM2.default, { totalPercent: this.totalPercent() });
 	            } else {
-	                console.log("no render");
 	                return null;
 	            }
 	        }
@@ -53066,45 +53060,57 @@
 
 	            event.preventDefault();
 
-	            // send data to Roommates component and database
+	            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	            var maxBillPercent = 100 - this.props.totalPercent;
 
-	            // create a string for an HTTP body message
-	            var name = encodeURIComponent(this.state.roomName);
-	            var email = encodeURIComponent(this.state.roomEmail);
-	            var percentage = encodeURIComponent(this.state.billPercent);
-	            var homeemail = encodeURIComponent(_Auth2.default.grabEmail());
-	            var formData = 'name=' + name + '&email=' + email + '&percentage=' + percentage + '&homeemail=' + homeemail;
+	            if (!regex.test(this.state.roomEmail)) {
+	                this.setState({
+	                    errors: { email: "Please enter a valid email" }
+	                });
+	            } else if (this.state.billPercent > maxBillPercent) {
+	                this.setState({
+	                    errors: { percent: 'Bill percent must be ' + maxBillPercent + ' or less' }
+	                });
+	            } else {
+	                // send data to Roommates component and database
 
-	            var xhr = new XMLHttpRequest();
-	            xhr.open('post', '/api/addrm');
-	            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-	            // set the authorization HTTP header
-	            xhr.setRequestHeader('Authorization', 'bearer ' + _Auth2.default.getToken());
-	            xhr.responseType = 'json';
-	            xhr.addEventListener('load', function () {
-	                if (xhr.status === 200) {
-	                    // success
+	                // create a string for an HTTP body message
+	                var name = encodeURIComponent(this.state.roomName);
+	                var email = encodeURIComponent(this.state.roomEmail);
+	                var percentage = encodeURIComponent(this.state.billPercent);
+	                var homeemail = encodeURIComponent(_Auth2.default.grabEmail());
+	                var formData = 'name=' + name + '&email=' + email + '&percentage=' + percentage + '&homeemail=' + homeemail;
 
-	                    // NEED TO RERENDER ROOMMATES
-	                    console.log("roommate submitted");
-	                    // change the current URL to /
-	                    window.location.reload();
-	                    //change entry fields to be empty
-	                    _this2.setState({ roomName: "" });
-	                    _this2.setState({ roomEmail: "" });
-	                    _this2.setState({ billPercent: 0 });
-	                } else {
-	                    // failure
-	                    console.log("Failed request");
-	                }
-	            });
-	            xhr.send(formData);
+	                var xhr = new XMLHttpRequest();
+	                xhr.open('post', '/api/addrm');
+	                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+	                // set the authorization HTTP header
+	                xhr.setRequestHeader('Authorization', 'bearer ' + _Auth2.default.getToken());
+	                xhr.responseType = 'json';
+	                xhr.addEventListener('load', function () {
+	                    if (xhr.status === 200) {
+	                        // success
+
+	                        // NEED TO RERENDER ROOMMATES
+	                        console.log("roommate submitted");
+	                        // change the current URL to /
+	                        window.location.reload();
+	                        //change entry fields to be empty
+	                        _this2.setState({ roomName: "" });
+	                        _this2.setState({ roomEmail: "" });
+	                        _this2.setState({ billPercent: 0 });
+	                        _this2.setState({ errors: {} });
+	                    } else {
+	                        // failure
+	                        console.log("Failed request");
+	                    }
+	                });
+	                xhr.send(formData);
+	            }
 	        }
 	    }, {
 	        key: 'handleChange',
 	        value: function handleChange(event) {
-	            console.log("roommate value change");
-	            console.log(event.target);
 	            var newState = {};
 
 	            newState[event.target.id] = event.target.value;
@@ -53146,10 +53152,11 @@
 	                            _react2.default.createElement(
 	                                'div',
 	                                { className: 'col-sm-8' },
-	                                _react2.default.createElement(_TextField2.default, { type: 'email',
+	                                _react2.default.createElement(_TextField2.default, {
 	                                    value: this.state.roomEmail,
 	                                    onChange: this.handleChange,
 	                                    id: 'roomEmail',
+	                                    errorText: this.state.errors.email,
 	                                    floatingLabelText: 'Roommate Email',
 	                                    hintText: 'ex. email@example.com' })
 	                            ),
@@ -53168,7 +53175,7 @@
 	                                    id: 'billPercent',
 	                                    floatingLabelText: 'Bill %',
 	                                    hintText: 'ex. 50',
-	                                    max: 100 - this.props.totalPercent,
+	                                    errorText: this.state.errors.percent,
 	                                    min: 0,
 	                                    step: '1' })
 	                            ),

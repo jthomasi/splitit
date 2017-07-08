@@ -44,7 +44,6 @@ class Roommates extends Component {
     }
 
     addRoomies() {
-        console.log("adding");
         this.setState({isVisible: !this.state.isVisible});
     }
 
@@ -54,18 +53,15 @@ class Roommates extends Component {
         this.props.roommates.map((i)=>{
             total += i.percentage;
         });
-        console.log(`total percent: ${total}`);
         return total;
     }
 
     showAddRM() {
-        console.log("showAddRM");
         if (this.state.isVisible) {
             return(
                 <AddRM totalPercent={this.totalPercent()}/>
             );
         } else {
-            console.log("no render");
             return null;
         }
     }

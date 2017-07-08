@@ -48,13 +48,11 @@ class Bills extends Component {
     }
 
     showBillAdd() {
-        console.log("showBillAdd");
         if (this.state.isVisible) {
             return(
                 <AddBill/>
             );
         } else {
-            console.log("no render");
             return null;
         }
     }

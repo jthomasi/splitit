@@ -18,4 +18,5 @@ module.exports.connect = (uri) => {
   require("./Home");
   require("./Bill");
   require("./Roommate");
+  console.log("models loaded")
 };

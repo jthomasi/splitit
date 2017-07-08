@@ -20,6 +20,7 @@
     "jsonwebtoken": "^7.4.1",
     "material-ui": "^0.16.5",
     "mongoose": "^4.11.0",
+    "nodemailer": "^4.0.1",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "react": "^15.4.1",

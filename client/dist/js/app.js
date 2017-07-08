@@ -41312,7 +41312,7 @@
 	                        _Table.TableRowColumn,
 	                        null,
 	                        "$",
-	                        i.cost
+	                        i.cost.toFixed(2)
 	                    )
 	                );
 	            });
@@ -45678,7 +45678,7 @@
 
 	            // create a string for an HTTP body message
 	            var name = encodeURIComponent(this.state.billName);
-	            var cost = encodeURIComponent(Number(this.state.billCost * 100 / 100).toFixed(2));
+	            var cost = encodeURIComponent(this.state.billCost);
 	            var due = encodeURIComponent(this.state.dueDate);
 	            var homeemail = encodeURIComponent(_Auth2.default.grabEmail());
 	            var formData = 'name=' + name + '&cost=' + cost + '&due=' + due + '&homeemail=' + homeemail;

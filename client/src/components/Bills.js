@@ -37,7 +37,7 @@ class Bills extends Component {
             return(
                 <TableRow>
                     <TableRowColumn>{i.name}</TableRowColumn>
-                    <TableRowColumn>${i.cost}</TableRowColumn>      
+                    <TableRowColumn>${i.cost.toFixed(2)}</TableRowColumn>      
                 </TableRow>  
             );
         });

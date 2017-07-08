@@ -26,7 +26,7 @@ class AddBills extends Component{
 
         // create a string for an HTTP body message
         const name = encodeURIComponent(this.state.billName);
-        const cost = encodeURIComponent(Number(this.state.billCost*100/100).toFixed(2));
+        const cost = encodeURIComponent(this.state.billCost);
         const due = encodeURIComponent(this.state.dueDate);
         const homeemail = encodeURIComponent(Auth.grabEmail());
         const formData = `name=${name}&cost=${cost}&due=${due}&homeemail=${homeemail}`;

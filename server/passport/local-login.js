@@ -46,7 +46,7 @@ module.exports = new PassportLocalStrategy({
 
       // create a token string
       const token = jwt.sign(payload, process.env.JWT_SECRET || config.jwtSecret);
-      console.log(`heroku test ${process.env.JWT_SECRET}`);
+      
       const data = {
         name: home.name
       };

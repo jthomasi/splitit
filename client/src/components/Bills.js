@@ -113,7 +113,7 @@ class Bills extends Component {
         this.props.bills.map((i)=>{
             total += i.cost;
         })
-        return total;
+        return total.toFixed(2);
     }
 
 	render(){

@@ -41389,7 +41389,7 @@
 	            this.props.bills.map(function (i) {
 	                total += i.cost;
 	            });
-	            return total;
+	            return total.toFixed(2);
 	        }
 	    }, {
 	        key: "render",
@@ -45678,7 +45678,7 @@
 
 	            // create a string for an HTTP body message
 	            var name = encodeURIComponent(this.state.billName);
-	            var cost = encodeURIComponent(this.state.billCost.toFixed(2));
+	            var cost = encodeURIComponent(Number(this.state.billCost * 100 / 100).toFixed(2));
 	            var due = encodeURIComponent(this.state.dueDate);
 	            var homeemail = encodeURIComponent(_Auth2.default.grabEmail());
 	            var formData = 'name=' + name + '&cost=' + cost + '&due=' + due + '&homeemail=' + homeemail;

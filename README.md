@@ -1,6 +1,9 @@
 # Splitit
 A bill management app for roommates!
+
 Link: https://pure-waters-16565.herokuapp.com/
+
+Backup: https://afternoon-tundra-64765.herokuapp.com/login
 
 Create a Home account. Add roommates. Add bills. Split the cost.
 

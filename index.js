@@ -2,11 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const config = require('./config');
-// const timer = require('./timer/timer.js');
+const timer = require('./server/timer/timer');
 
 // connect to the database and load models
 let db = process.env.MONGODB_URI || config.dbUri;
-
 require('./server/models').connect(db);
 
 const app = express();
@@ -34,10 +33,10 @@ const apiRoutes = require('./server/routes/api');
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
 
+// bill dates check timer
+setInterval(timer, 86400000);
 
-//timer
-// setTimeout(timer, 86400000);
-
+// PORT
 let PORT = process.env.PORT || 3000;
 
 // start the server

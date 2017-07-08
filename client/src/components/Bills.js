@@ -139,7 +139,7 @@ class Bills extends Component {
                         >
                         "Bills"
                         </Badge>
-                        } subtitle="manage roommates"/>
+                        } subtitle="manage bills"/>
                     <Table
                         onRowSelection={this.onRowSelection}
                     >

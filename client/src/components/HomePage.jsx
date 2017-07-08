@@ -8,9 +8,6 @@ const HomePage = () => (
     <CardMedia>
       <img src={require("../../dist/img/splitrent.jpg")} alt="front"/>
     </CardMedia>
-    <CardText>
-      <p>Please sign in.</p>
-    </CardText>
   </Card>
 );
 

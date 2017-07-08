@@ -9,6 +9,7 @@ class AddRM extends Component{
     constructor(props){
         super(props);
         this.state = {
+            errors: {},
             roommates: "",
             roomName: "",
             roomEmail: "",
@@ -21,46 +22,59 @@ class AddRM extends Component{
     handleSubmit(event){
         event.preventDefault();
 
-        // send data to Roommates component and database
+        let regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        let maxBillPercent = 100 - this.props.totalPercent;
+        
+        if (!regex.test(this.state.roomEmail)) {
+            this.setState({
+                errors: {email: "Please enter a valid email"}
+            });
+        } else if (this.state.billPercent > maxBillPercent) {
+            this.setState({
+                errors: {percent: `Bill percent must be ${maxBillPercent} or less`}
+            });
+        } else {                    
+            // send data to Roommates component and database
 
-        // create a string for an HTTP body message
-        const name = encodeURIComponent(this.state.roomName);
-        const email = encodeURIComponent(this.state.roomEmail);
-        const percentage = encodeURIComponent(this.state.billPercent);
-        const homeemail = encodeURIComponent(Auth.grabEmail());
-        const formData = `name=${name}&email=${email}&percentage=${percentage}&homeemail=${homeemail}`;
+            // create a string for an HTTP body message
+            const name = encodeURIComponent(this.state.roomName);
+            const email = encodeURIComponent(this.state.roomEmail);
+            const percentage = encodeURIComponent(this.state.billPercent);
+            const homeemail = encodeURIComponent(Auth.grabEmail());
+            const formData = `name=${name}&email=${email}&percentage=${percentage}&homeemail=${homeemail}`;
+            
+            const xhr = new XMLHttpRequest();
+            xhr.open('post', '/api/addrm');
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            // set the authorization HTTP header
+            xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
+            xhr.responseType = 'json';
+            xhr.addEventListener('load', () => {
+            if (xhr.status === 200) {
+                // success
 
-        const xhr = new XMLHttpRequest();
-        xhr.open('post', '/api/addrm');
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        // set the authorization HTTP header
-        xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
-        xhr.responseType = 'json';
-        xhr.addEventListener('load', () => {
-        if (xhr.status === 200) {
-            // success
-
-            // NEED TO RERENDER ROOMMATES
-            console.log("roommate submitted");
-            // change the current URL to /
-            window.location.reload();
-            //change entry fields to be empty
-            this.setState({roomName: ""});
-            this.setState({roomEmail: ""});
-            this.setState({billPercent: 0});
-        } else {
-            // failure
-            console.log("Failed request");
-        }
-        });
-        xhr.send(formData);
+                // NEED TO RERENDER ROOMMATES
+                console.log("roommate submitted");
+                // change the current URL to /
+                window.location.reload();
+                //change entry fields to be empty
+                this.setState({roomName: ""});
+                this.setState({roomEmail: ""});
+                this.setState({billPercent: 0});
+                this.setState({errors: {} });
+            } else {
+                // failure
+                console.log("Failed request");
+            }
+            });
+            xhr.send(formData);
+        
+        }        
     }
 
-    handleChange(event){
-        console.log("roommate value change");
-         console.log(event.target);
+    handleChange(event){        
         let newState = {};
-        
+
         newState[event.target.id] = event.target.value;
         this.setState(newState);
     }
@@ -88,10 +102,11 @@ class AddRM extends Component{
                     <div className="form-group">
                         <div className="col-sm-2"/>
                         <div className="col-sm-8">
-                            <TextField type="email"
+                            <TextField
                             value={this.state.roomEmail}                                        
                             onChange={this.handleChange}
                             id="roomEmail"
+                            errorText={this.state.errors.email}
                             floatingLabelText="Roommate Email"
                             hintText="ex. email@example.com"/>
                         </div>
@@ -107,7 +122,7 @@ class AddRM extends Component{
                             id="billPercent"
                             floatingLabelText="Bill %"
                             hintText="ex. 50"
-                            max={100 - this.props.totalPercent}
+                            errorText={this.state.errors.percent}
                             min={0}
                             step="1"/>
                         </div>

@@ -1,10 +1,11 @@
 # Splitit
 A bill management app for roommates!
+Link: https://pure-waters-16565.herokuapp.com/
 
 Create a Home account. Add roommates. Add bills. Split the cost.
 
 # Members
 * [Paul D.](https://github.com/rukaroa)
-    React, Material-UI, routing, UX, integration
+    React, Material-UI, UX, integration, deployment
 * [Jesse T.](https://github.com/jthomasi)
-    models, MongooseDB, server, UX, login/authentication, restructuring
+    models, MongooseDB, server, login/authentication, restructuring, routing

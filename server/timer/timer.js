@@ -90,8 +90,8 @@ function timer() {
     }
 
     function sendEmail(email, text) {
-        const heroEM = process.env.SPLITIT_EMAIL;
-        const heroPW = process.env.SPLITIT_PW;
+        const heroEM = process.env.SPLITIT_EMAIL || "";
+        const heroPW = process.env.SPLITIT_PW || "";
 
         var transporter = nodemailer.createTransport({
             service: 'Gmail',

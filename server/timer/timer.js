@@ -19,6 +19,8 @@ function timer() {
         const needsNotify = [];
         const datestring = Date();
         const dateformat = datestring.split(" ", 4);
+        const currentYear = parseInt(dateformat[3]);
+        const currentMonth = dateformat[1];
         const currentDay = parseInt(dateformat[2]);
 
         var count = 0;
@@ -27,12 +29,58 @@ function timer() {
             for (var i=0;i<homes[count].bills.length;i++){
                 const billDueDate = homes[count].bills[i].due;
                 const dueString = billDueDate.split(" ",4);
-                const billDay = parseInt(dueString[2]);
-                // console.log(homes[count].bills[i].due);
+                let billDay = parseInt(dueString[2]);
 
+                if ( currentMonth === 'Jan' || 'Mar' || 'May' || 'Jul' || 'Aug' || 'Oct' || 'Dec' ) {
+                    if ( currentDay === 29 ) {
+                        currentDay = -2;
+                    };
+                    if ( currentDay === 30 ) {
+                        currentDay = -1;
+                    };
+                    if ( currentDay === 31 ) {
+                        currentDay = 0;
+                    };
+                }
+                if ( currentMonth === 'Apr' || 'Jun' || 'Sept' || 'Nov' ) {
+                    if ( currentDay === 28 ) {
+                        currentDay = -2;
+                    };
+                    if ( currentDay === 29 ) {
+                        currentDay = -1;
+                    };
+                    if ( currentDay === 30 ) {
+                        currentDay = 0;
+                    };
+                }
+                if ( currentYear % 4 === 0 ) {
+                    if ( currentMonth === 'Feb' ) {
+                        if ( currentDay === 27 ) {
+                            currentDay = -2;
+                        };
+                        if ( billDay === 28 ) {
+                            currentDay = -1;
+                        };
+                        if ( billDay === 29 ) {
+                            currentDay = 0;
+                        };
+                    }
+                }
+                else {
+                    if ( currentMonth === 'Feb' ) {
+                        if ( currentDay === 26 ) {
+                            currentDay = -2;
+                        };
+                        if ( currentDay === 27 ) {
+                            currentDay = -1;
+                        };
+                        if ( currentDay === 28 ) {
+                            currentDay = 0;
+                        };
+                    }
+                }
+                
                 if ((currentDay + 3) === billDay) {
-                    console.log("Bill due!");
-                    console.log(homes[count].roommates);
                     const dueBillInfo = {
                         name: homes[count].bills[i].name,
                         cost: homes[count].bills[i].cost,

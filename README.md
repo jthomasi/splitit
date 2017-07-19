@@ -34,6 +34,6 @@ Link: https://splitit.herokuapp.com/
 
 # Members
 * [Paul D.](https://github.com/rukaroa)
-    React, Material-UI, UX, integration, deployment
+    React, Material-UI, UX, deployment
 * [Jesse T.](https://github.com/jthomasi)
     models, MongooseDB, server, login/authentication, restructuring, routing

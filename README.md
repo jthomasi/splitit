@@ -30,6 +30,7 @@ Link: https://splitit.herokuapp.com/
 * Passport
 * bcrypt
 * Two-lock authentication
+* Webpack
 * Material UI
 
 # Members
